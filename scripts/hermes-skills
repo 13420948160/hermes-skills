@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+import json, os, shutil, sys, urllib.request
+
+GH="http://10.10.11.4:30690"
+PE="product%2Fiot%2Fiottool%2Fskills"
+BR="develop"
+SD=os.path.expanduser("~/.hermes/skills")
+EP=os.path.expanduser("~/.hermes/.env")
+P1="GITLAB"
+P2="_TOKEN="
+TP=P1+P2
+
+def gt():
+    t=os.environ.get(P1+"_TOKEN")
+    if t: return t
+    if not os.path.exists(EP): return None
+    with open(EP) as f:
+        for l in f:
+            l=l.strip()
+            if l.startswith(TP):
+                return l.split("=",1)[1]
+    return None
+
+def gg(path):
+    t=gt()
+    if not t: print("Error: token not set"); sys.exit(1)
+    u=GH+"/api/v4/projects/"+PE+"/"+path
+    r=urllib.request.Request(u)
+    r.add_header("PRIVATE-TOKEN",t)
+    with urllib.request.urlopen(r,timeout=10) as x: return x.read().decode()
+
+def ls():
+    d=json.loads(gg("repository/files/skills-catalog.json/raw?ref="+BR))
+    return d.get("skills",[])
+
+def browse():
+    s=ls()
+    print()
+    print("## Hermes Skills Hub -- "+str(len(s))+" skills")
+    print()
+    print("| # | Name | Description |")
+    print("|---|------|-------------|")
+    for i,v in enumerate(s,1):
+        print("| "+str(i)+" | "+v["name"]+" | "+v["description"]+" |")
+    print()
+    print("Install:")
+    for v in s:
+        print("  hermes-skills install "+v["name"])
+    print()
+
+def install(name):
+    s=ls()
+    f=[v for v in s if v["name"]==name]
+    if not f: print("Not found: "+name); return
+    d=os.path.join(SD,name)
+    os.makedirs(d,exist_ok=True)
+    c=gg("repository/files/skills%2F"+name+"%2FSKILL.md/raw?ref="+BR)
+    with open(os.path.join(d,"SKILL.md"),"w") as f: f.write(c)
+    print("OK "+name)
+
+def uninstall(name):
+    d=os.path.join(SD,name)
+    if not os.path.exists(d): print("Not installed: "+name); return
+    shutil.rmtree(d)
+    print("Removed "+name)
+
+def hp():
+    print("Usage:")
+    print("  hermes-skills browse")
+    print("  hermes-skills install <name>")
+    print("  hermes-skills uninstall <name>")
+
+if __name__=="__main__":
+    if len(sys.argv)<2: hp(); sys.exit(1)
+    c=sys.argv[1]
+    if c in ("-h","--help","help"): hp()
+    elif c=="browse": browse()
+    elif c=="install":
+        if len(sys.argv)<3: print("Usage: hermes-skills install <name>"); sys.exit(1)
+        install(sys.argv[2])
+    elif c=="uninstall":
+        if len(sys.argv)<3: print("Usage: hermes-skills uninstall <name>"); sys.exit(1)
+        uninstall(sys.argv[2])
+    else: print("Unknown: "+c); hp(); sys.exit(1)

@@ -78,7 +78,7 @@ def main():
     print()
     print("```bash")
     for s in skills:
-        print(f"python3 ~/.hermes/skills/hermes-hub-browser/scripts/install-from-gitlab.py {s['name']}")
+        print(f"python3 scripts/install-from-gitlab.py {s['name']}")
     print("```")
     print()
 

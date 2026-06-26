@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T11:09:50Z",
+  "updated": "2026-06-26T11:28:43Z",
   "skills": [
     {
       "name": "hello-hermes",
@@ -7,9 +7,14 @@
       "description": "Use when the user wants to test the Hermes skills hub connection. A simple test skill that demonstrates skill structure and verifies your custom hub is reachable."
     },
     {
+      "name": "hermes-skills",
+      "path": "hermes-skills",
+      "description": "Manage skills from private GitLab hub. Browse, install, and uninstall skills using the hermes-skills CLI command."
+    },
+    {
       "name": "hermes-hub-browser",
       "path": "hermes-hub-browser",
-      "description": "Use when browsing available skills in the custom hub. Lists all skills from skills-catalog.json in a table with copyable install commands."
+      "description": "Use when browsing available skills in the custom hub. Lists all skills in a table with copyable install commands."
     }
   ]
 }
