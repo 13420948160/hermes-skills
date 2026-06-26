@@ -20,22 +20,25 @@ def main():
     updated = data.get("updated", "?")
 
     print()
-    print(f"   Hermes Skills Hub  —  共 {len(skills)} 个技能")
-    print(f"   更新时间: {updated}")
+    print(f"## Hermes Skills Hub  —  共 {len(skills)} 个技能")
     print()
-    print(f"  {'序号':<4} {'技能名称':<20} {'说明'}")
-    print(f"  {'-'*4} {'-'*20} {'-'*40}")
+    print(f"更新时间: {updated}")
+    print()
+    print("| 序号 | 技能名称 | 说明 |")
+    print("|------|---------|------|")
 
     for i, s in enumerate(skills, 1):
-        name = s["name"][:18]
-        desc = s["description"][:38]
-        print(f"  {i:<4} {name:<20} {desc}")
+        name = s["name"]
+        desc = s["description"]
+        print(f"| {i} | {name} | {desc} |")
 
     print()
-    print("  安装命令:")
+    print("### 安装命令")
+    print()
+    print("```bash")
     for s in skills:
-        cmd = f"hermes skills install 13420948160/hermes-skills/skills/{s['path']}"
-        print(f"    {cmd}")
+        print(f"hermes skills install 13420948160/hermes-skills/skills/{s['path']}")
+    print("```")
     print()
 
 
