@@ -1,5 +1,5 @@
 ---
-name: hermes-skills
+name: manage-skills
 description: Manage skills from private GitLab hub. Browse, install, and uninstall skills using the hermes-skills CLI command.
 version: 1.0.0
 author: Hermes Agent
