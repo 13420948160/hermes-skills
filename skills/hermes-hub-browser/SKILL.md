@@ -18,16 +18,10 @@ metadata:
 
 ## 使用方式
 
-运行脚本：
+运行脚本（Windows / macOS / Linux 通用）：
 
 ```bash
-bash scripts/browse-hub.sh
-```
-
-如果安装在本地 skills 目录：
-
-```bash
-bash ~/.hermes/skills/hermes-hub-browser/scripts/browse-hub.sh
+python3 ~/.hermes/skills/hermes-hub-browser/scripts/browse-hub.py
 ```
 
 输出示例：
