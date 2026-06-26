@@ -15,7 +15,7 @@ Hermes 技能（Skills）是可复用的工作流程和规范，以 Markdown 文
 | 加载方式 | 运行时按需加载 | 启动时全局加载 |
 | 管理命令 | `hermes skills *` | `hermes plugins *` |
 
-**一句话总结：技能 = Agent 的"经验知识库"；插件 = Agent 的"工具箱"**
+**一句话总结：技能 = Agent 的"经验知识库"；插件 = Agent 的"工具箱"** 
 
 ## 目录结构
 
