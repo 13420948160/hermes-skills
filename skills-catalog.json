@@ -1,0 +1,10 @@
+{
+  "updated": "2026-06-26T09:44:42Z",
+  "skills": [
+    {
+      "name": "hello-hermes",
+      "path": "hello-hermes",
+      "description": "Use when the user wants to test the Hermes skills hub connection. A simple test skill that demonstrates skill structure and verifies your custom hub is reachable."
+    }
+  ]
+}
