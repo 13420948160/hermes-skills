@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T11:43:20Z",
+  "updated": "2026-06-26T11:45:48Z",
   "skills": [
     {
       "name": "hello-hermes",
@@ -9,7 +9,7 @@
     {
       "name": "manage-skills",
       "path": "manage-skills",
-      "description": "Manage skills from private GitLab hub. Browse, install, and uninstall skills using the hermes-skills CLI command."
+      "description": "Manage skills from private GitLab hub. Browse, install, and uninstall skills using the manage-skills CLI command."
     }
   ]
 }
