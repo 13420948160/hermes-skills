@@ -11,10 +11,10 @@ if ! curl -sf -o "$tmpfile" "$CATALOG_URL"; then
     exit 1
 fi
 
-python3 -c "
-import json
+python3 - "$tmpfile" << 'PYEOF'
+import sys, json
 
-with open('$tmpfile') as f:
+with open(sys.argv[1]) as f:
     d = json.load(f)
 
 skills = d.get('skills', [])
@@ -24,8 +24,8 @@ print()
 print(f'   Hermes Skills Hub  —  共 {len(skills)} 个技能')
 print(f'   更新时间: {updated}')
 print()
-print(f'  {\"序号\":<4} {\"技能名称\":<20} {\"说明\"}')
-print(f'  {\"-\"*4} {\"-\"*20} {\"-\"*40}')
+print(f'  {"序号":<4} {"技能名称":<20} {"说明"}')
+print(f'  {"-"*4} {"-"*20} {"-"*40}')
 
 for i, s in enumerate(skills, 1):
     name = s['name'][:18]
@@ -38,6 +38,6 @@ for s in skills:
     cmd = 'hermes skills install 13420948160/hermes-skills/skills/' + s['path']
     print(f'    {cmd}')
 print()
-"
+PYEOF
 
 rm -f "$tmpfile"
