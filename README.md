@@ -94,7 +94,31 @@ git add -A && git commit -m "feat: add <skill-name>"
 git push origin main
 ```
 
-**3. 安装技能**
+## 查看仓库里的所有技能
+
+### 方式一：skills-catalog.json（推荐）
+
+每次推送新技能，GitHub Actions 自动更新：
+
+```bash
+curl -s "https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
+```
+
+### 方式二：GitHub API
+
+```bash
+# 从 .env 文件读取 token 直接使用
+GITHUB_TOKEN=$(grep "^GITHUB_TOKEN=*** ~/.hermes/.env | cut -d= -f2) && \
+curl -s -H "Authorization: token *** "https://api.github.com/repos/13420948160/hermes-skills/contents/skills"
+```
+
+### 方式三：脚本
+
+```bash
+bash scripts/list-skills.sh
+```
+
+## 安装技能
 
 ```bash
 # 从 repo 安装（需要先 tap add）
