@@ -52,16 +52,16 @@ def list_skills():
 def cmd_browse():
     skills = list_skills()
     print()
-    print(f"## Hermes Skills Hub -- {len(skills)} skills")
-    print()
-    print("| # | Name | Description |")
-    print("|---|------|-------------|")
+    print(f"  Hermes Skills Hub  --  {len(skills)} skills\n")
+    print(f"  {'#':<3} {'Name':<20} {'Description'}")
+    print(f"  {'-'*3} {'-'*20} {'-'*40}")
     for i, s in enumerate(skills, 1):
-        print(f"| {i} | {s['name']} | {s['description']} |")
+        desc = s['description'][:38]
+        print(f"  {i:<3} {s['name']:<20} {desc}")
     print()
-    print("Install:")
+    print("  Install:")
     for s in skills:
-        print(f"  hermes-skills install {s['name']}")
+        print(f"    hermes-skills install {s['name']}")
     print()
 
 
@@ -81,8 +81,13 @@ def cmd_install(name):
 
 
 def cmd_uninstall(name):
-    target = os.path.join(SD, name)
-    if not os.path.exists(target):
+    # 搜索技能目录（可能在子目录下）
+    target = None
+    for root, dirs, files in os.walk(SD):
+        if os.path.basename(root) == name and "SKILL.md" in files:
+            target = root
+            break
+    if not target:
         print(f"Not installed: {name}")
         return
     shutil.rmtree(target)
