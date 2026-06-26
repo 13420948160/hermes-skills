@@ -168,32 +168,33 @@ hermes skills install owner/repo/skills/category/skill-name
 
 ## 搜索不到刚上传的技能？
 
-`hermes skills search` 搜不到但 `hermes skills install` 可以正常安装，常见原因：
+`hermes skills search` 和 `browse` 搜不到自定义 tap 的技能，这是 **Hermes 的设计限制**，不是配置问题。
 
-### 1. 目录层级过深（最常见）
+### 根本原因
 
-`hermes skills search` 只扫描 tap 路径下的一级子目录。如果你的技能放在 `skills/category/skill-name`（两层），search 只能看到 `category` 级别，不会递归进入查找。
+当中心化索引（Hermes Index）存在时，`search` 和 `browse` 会**跳过所有 GitHub 源**（包括自定义 tap），只用官方索引。源码中明确跳过：
 
-**解决：** 安装时用完整路径即可，search 搜不到不影响使用：
-
-```bash
-hermes skills install owner/repo/skills/category/skill-name
+```python
+_api_source_ids = frozenset({"github", "skills-sh", "clawhub", ...})
+if _index_available and sid in _api_source_ids:
+    continue  # 自定义 tap 不在索引中，永远被跳过
 ```
 
-要支持 search，需将技能目录改为单层结构：
+所以无论 `skills/hello-hermes/SKILL.md` 还是 `skills/category/skill-name/SKILL.md`，自定义 tap 的技能都无法通过 `search` 或 `browse` 发现。
+
+### 不影响使用
+
+`install` 完全独立于索引，通过完整路径直接下载：
 
 ```bash
-skills/skill-name/SKILL.md           # ✅ 能被 search 搜到
-skills/category/skill-name/SKILL.md  # ❌ 搜不到，但可以 install
+# 安装（路径格式：owner/repo/skills/category/skill-name）
+hermes skills install 13420948160/hermes-skills/skills/hello-hermes
+
+# 强制重装
+hermes skills install 13420948160/hermes-skills/skills/hello-hermes --force
 ```
 
-### 2. Tap 索引缓存延迟
-
-新添加的 tap 需要一段时间才能被索引缓存。索引刷新后即可搜索。
-
----
-
-**总结：直接 `hermes skills install` 安装即可，search 搜不到是正常现象，不影响使用。**
+`hermes skills list` 也能看到已安装的技能。日常流程不受影响。
 
 ## 默认 Taps
 
