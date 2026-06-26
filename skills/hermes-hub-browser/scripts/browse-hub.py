@@ -4,9 +4,9 @@ import json
 import sys
 import urllib.request
 
-# 直连 URL，国内慢时可切换镜像
-CATALOG_URL = "https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
-# gh-proxy.com 镜像（国内 ≈450KB/s）
+# 直连 URL（通过 jsDelivr CDN 加速，国内访问快）
+CATALOG_URL = "https://cdn.jsdelivr.net/gh/13420948160/hermes-skills@main/skills-catalog.json"
+# 备用：gh-proxy.com 镜像
 MIRROR_URL = "https://gh-proxy.com/https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
 
 
