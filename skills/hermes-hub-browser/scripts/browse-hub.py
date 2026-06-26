@@ -1,38 +1,63 @@
 #!/usr/bin/env python3
 """Hermes Skills Hub Browser - 查看仓库中所有可用技能"""
 import json
+import os
 import sys
 import urllib.request
+import urllib.error
 
-# 直连 URL（通过 jsDelivr CDN 加速，国内访问快）
-CATALOG_URL = "https://cdn.jsdelivr.net/gh/13420948160/hermes-skills@main/skills-catalog.json"
-# 备用：gh-proxy.com 镜像
-MIRROR_URL = "https://gh-proxy.com/https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
+# GitLab 项目编码
+GITLAB_HOST = "http://10.10.11.4:30690"
+PROJECT_PATH = "product/iot/iottool/skills"
+PROJECT_ENCODED = "product%2Fiot%2Fiottool%2Fskills"
+BRANCH = "develop"  # 当前在 develop 分支，合并到 main 后改为 main
+
+# GitLab API 地址（需配置 private_token）
+API_URL = f"{GITLAB_HOST}/api/v4/projects/{PROJECT_ENCODED}/repository/files/skills-catalog.json/raw?ref={BRANCH}"
 
 
-def fetch_json(url: str, timeout: int = 10):
-    with urllib.request.urlopen(url, timeout=timeout) as resp:
+def get_token():
+    """从环境变量或 .env 文件读取 GITLAB_TOKEN"""
+    token = os.environ.get("GITLAB_TOKEN") or os.environ.get("GITLAB_PRIVATE_TOKEN")
+    if token:
+        return token
+    # 尝试从 ~/.hermes/.env 读取
+    env_path = os.path.expanduser("~/.hermes/.env")
+    if os.path.exists(env_path):
+        with open(env_path) as f:
+            for line in f:
+                if line.startswith("GITLAB_TOKEN=") or line.startswith("GITLAB_PRIVATE_TOKEN="):
+                    return line.strip().split("=", 1)[1]
+    return None
+
+
+def fetch_json(url: str, token: str, timeout: int = 10):
+    req = urllib.request.Request(url)
+    if token:
+        req.add_header("PRIVATE-TOKEN", token)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
 def main():
-    data = None
-    err = None
+    token = get_token()
+    if not token:
+        print("错误: 未找到 GITLAB_TOKEN", file=sys.stderr)
+        print("请配置 ~/.hermes/.env 或设置环境变量:", file=sys.stderr)
+        print("  echo \"GITLAB_TOKEN=你的token\" >> ~/.hermes/.env", file=sys.stderr)
+        sys.exit(1)
 
-    # 先尝试直连
     try:
-        data = fetch_json(CATALOG_URL)
+        data = fetch_json(API_URL, token)
+    except urllib.error.HTTPError as e:
+        print(f"错误: GitLab API 返回 {e.code}", file=sys.stderr)
+        if e.code == 401:
+            print("      Token 无效，请检查 GITLAB_TOKEN 是否正确", file=sys.stderr)
+        sys.exit(1)
     except Exception as e:
-        err = e
-        # 直连失败，尝试镜像
-        try:
-            print("直连超时，尝试 gh-proxy.com 镜像...", file=sys.stderr)
-            data = fetch_json(MIRROR_URL, timeout=30)
-        except Exception as e2:
-            print(f"错误: 无法获取技能列表", file=sys.stderr)
-            print(f"      直连: {err}", file=sys.stderr)
-            print(f"      镜像: {e2}", file=sys.stderr)
-            sys.exit(1)
+        print(f"错误: 无法获取技能列表", file=sys.stderr)
+        print(f"      {e}", file=sys.stderr)
+        sys.exit(1)
 
     skills = data.get("skills", [])
     updated = data.get("updated", "?")
@@ -53,7 +78,8 @@ def main():
     print()
     print("```bash")
     for s in skills:
-        print(f"hermes skills install 13420948160/hermes-skills/skills/{s['path']}")
+        url = f"{GITLAB_HOST}/{PROJECT_PATH}/-/raw/{BRANCH}/skills/{s['path']}/SKILL.md"
+        print(f"hermes skills install \"{url}\" --name {s['name']}")
     print("```")
     print()
 

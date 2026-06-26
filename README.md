@@ -101,7 +101,7 @@ git push origin main
 每次推送新技能，GitHub Actions 自动更新：
 
 ```bash
-curl -s "https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
+curl -s "http://10.10.11.4:30690/product/iot/iottool/skills/-/raw/main/skills-catalog.json"
 ```
 
 ### 方式二：GitHub API
@@ -109,7 +109,7 @@ curl -s "https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills
 ```bash
 # 从 .env 文件读取 token 直接使用
 GITHUB_TOKEN=$(grep "^GITHUB_TOKEN=*** ~/.hermes/.env | cut -d= -f2) && \
-curl -s -H "Authorization: token *** "https://api.github.com/repos/13420948160/hermes-skills/contents/skills"
+curl -s -H "Authorization: token *** "http://10.10.11.4:30690/product/iot/iottool/skills/-/tree/main/skills"
 ```
 
 ### 方式三：脚本
@@ -128,7 +128,7 @@ hermes skills install owner/repo/skills/category/skill-name
 hermes skills install owner/repo/skills/category/skill-name --force
 
 # 从 raw URL 直接安装（无需 tap）
-hermes skills install "https://raw.githubusercontent.com/owner/repo/main/skills/category/skill-name/SKILL.md" --name skill-name
+hermes skills install "http://10.10.11.4:30690/product/iot/iottool/skills/-/raw/main/skills/category/skill-name/SKILL.md" --name skill-name
 ```
 
 ### 方式二：手动安装
@@ -212,10 +212,10 @@ if _index_available and sid in _api_source_ids:
 
 ```bash
 # 安装（路径格式：owner/repo/skills/category/skill-name）
-hermes skills install 13420948160/hermes-skills/skills/hello-hermes
+hermes skills install 10.10.11.4:30690/product/iot/iottool/skills/skills/hello-hermes
 
 # 强制重装
-hermes skills install 13420948160/hermes-skills/skills/hello-hermes --force
+hermes skills install 10.10.11.4:30690/product/iot/iottool/skills/skills/hello-hermes --force
 ```
 
 `hermes skills list` 也能看到已安装的技能。日常流程不受影响。
