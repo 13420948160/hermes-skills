@@ -1,84 +1,124 @@
 #!/usr/bin/env python3
-import json, os, shutil, sys, urllib.request
+"""hermes-skills CLI — browse/install/uninstall skills from private GitLab repo"""
+import json
+import os
+import shutil
+import sys
+import urllib.request
+import urllib.error
 
-GH="http://10.10.11.4:30690"
-PE="product%2Fiot%2Fiottool%2Fskills"
-BR="develop"
-SD=os.path.expanduser("~/.hermes/skills")
-EP=os.path.expanduser("~/.hermes/.env")
-P1="GITLAB"
-P2="_TOKEN="
-TP=P1+P2
+GH = "http://10.10.11.4:30690"
+PE = "product%2Fiot%2Fiottool%2Fskills"
+BR = "develop"
+SD = os.path.expanduser("~/.hermes/skills")
+EP = os.path.expanduser("~/.hermes/.env")
 
-def gt():
-    t=os.environ.get(P1+"_TOKEN")
-    if t: return t
-    if not os.path.exists(EP): return None
+
+def get_token():
+    t = os.environ.get("GITLAB_TOKEN")
+    if t:
+        return t
+    if not os.path.exists(EP):
+        return None
     with open(EP) as f:
-        for l in f:
-            l=l.strip()
-            if l.startswith(TP):
-                return l.split("=",1)[1]
+        for line in f:
+            line = line.strip()
+            if "=" in line:
+                k, v = line.split("=", 1)
+                if k.strip() == "GITLAB_TOKEN":
+                    return v
     return None
 
-def gg(path):
-    t=gt()
-    if not t: print("Error: token not set"); sys.exit(1)
-    u=GH+"/api/v4/projects/"+PE+"/"+path
-    r=urllib.request.Request(u)
-    r.add_header("PRIVATE-TOKEN",t)
-    with urllib.request.urlopen(r,timeout=10) as x: return x.read().decode()
 
-def ls():
-    d=json.loads(gg("repository/files/skills-catalog.json/raw?ref="+BR))
-    return d.get("skills",[])
+def api_get(path):
+    t = get_token()
+    if not t:
+        print("Error: GITLAB_TOKEN not set")
+        print("  add to ~/.hermes/.env or export GITLAB_TOKEN")
+        sys.exit(1)
+    url = f"{GH}/api/v4/projects/{PE}/{path}"
+    req = urllib.request.Request(url)
+    req.add_header("PRIVATE-TOKEN", t)
+    with urllib.request.urlopen(req, timeout=10) as r:
+        return r.read().decode()
 
-def browse():
-    s=ls()
+
+def list_skills():
+    data = json.loads(api_get(
+        f"repository/files/skills-catalog.json/raw?ref={BR}"))
+    return data.get("skills", [])
+
+
+def cmd_browse():
+    skills = list_skills()
     print()
-    print("## Hermes Skills Hub -- "+str(len(s))+" skills")
+    print(f"## Hermes Skills Hub -- {len(skills)} skills")
     print()
     print("| # | Name | Description |")
     print("|---|------|-------------|")
-    for i,v in enumerate(s,1):
-        print("| "+str(i)+" | "+v["name"]+" | "+v["description"]+" |")
+    for i, s in enumerate(skills, 1):
+        print(f"| {i} | {s['name']} | {s['description']} |")
     print()
     print("Install:")
-    for v in s:
-        print("  hermes-skills install "+v["name"])
+    for s in skills:
+        print(f"  hermes-skills install {s['name']}")
     print()
 
-def install(name):
-    s=ls()
-    f=[v for v in s if v["name"]==name]
-    if not f: print("Not found: "+name); return
-    d=os.path.join(SD,name)
-    os.makedirs(d,exist_ok=True)
-    c=gg("repository/files/skills%2F"+name+"%2FSKILL.md/raw?ref="+BR)
-    with open(os.path.join(d,"SKILL.md"),"w") as f: f.write(c)
-    print("OK "+name)
 
-def uninstall(name):
-    d=os.path.join(SD,name)
-    if not os.path.exists(d): print("Not installed: "+name); return
-    shutil.rmtree(d)
-    print("Removed "+name)
+def cmd_install(name):
+    skills = list_skills()
+    found = [s for s in skills if s["name"] == name]
+    if not found:
+        print(f"Not found: {name}")
+        return
+    target = os.path.join(SD, name)
+    os.makedirs(target, exist_ok=True)
+    path = f"repository/files/skills%2F{name}%2FSKILL.md/raw?ref={BR}"
+    content = api_get(path)
+    with open(os.path.join(target, "SKILL.md"), "w") as f:
+        f.write(content)
+    print(f"OK {name}")
 
-def hp():
+
+def cmd_uninstall(name):
+    target = os.path.join(SD, name)
+    if not os.path.exists(target):
+        print(f"Not installed: {name}")
+        return
+    shutil.rmtree(target)
+    print(f"Removed {name}")
+
+
+def print_help():
     print("Usage:")
     print("  hermes-skills browse")
     print("  hermes-skills install <name>")
     print("  hermes-skills uninstall <name>")
+    print()
+    print("Examples:")
+    print("  hermes-skills install hello-hermes")
 
-if __name__=="__main__":
-    if len(sys.argv)<2: hp(); sys.exit(1)
-    c=sys.argv[1]
-    if c in ("-h","--help","help"): hp()
-    elif c=="browse": browse()
-    elif c=="install":
-        if len(sys.argv)<3: print("Usage: hermes-skills install <name>"); sys.exit(1)
-        install(sys.argv[2])
-    elif c=="uninstall":
-        if len(sys.argv)<3: print("Usage: hermes-skills uninstall <name>"); sys.exit(1)
-        uninstall(sys.argv[2])
-    else: print("Unknown: "+c); hp(); sys.exit(1)
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print_help()
+        sys.exit(1)
+    cmd = sys.argv[1]
+    if cmd in ("-h", "--help", "help"):
+        print_help()
+    elif cmd == "browse":
+        cmd_browse()
+    elif cmd == "install":
+        if len(sys.argv) < 3:
+            print("Usage: hermes-skills install <name>")
+            sys.exit(1)
+        cmd_install(sys.argv[2])
+    elif cmd == "uninstall":
+        if len(sys.argv) < 3:
+            print("Usage: hermes-skills uninstall <name>")
+            sys.exit(1)
+        cmd_uninstall(sys.argv[2])
+    else:
+        print(f"Unknown: {cmd}")
+        print_help()
+        sys.exit(1)
