@@ -1,10 +1,15 @@
 {
-  "updated": "2026-06-26T09:44:42Z",
+  "updated": "2026-06-26T10:03:14Z",
   "skills": [
     {
       "name": "hello-hermes",
       "path": "hello-hermes",
       "description": "Use when the user wants to test the Hermes skills hub connection. A simple test skill that demonstrates skill structure and verifies your custom hub is reachable."
+    },
+    {
+      "name": "hermes-hub-browser",
+      "path": "hermes-hub-browser",
+      "description": "Use when browsing available skills in the custom hub. Lists all skills from skills-catalog.json in a table with copyable install commands."
     }
   ]
 }
