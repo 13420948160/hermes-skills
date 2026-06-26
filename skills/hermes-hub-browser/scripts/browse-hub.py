@@ -78,8 +78,7 @@ def main():
     print()
     print("```bash")
     for s in skills:
-        url = f"{GITLAB_HOST}/{PROJECT_PATH}/-/raw/{BRANCH}/skills/{s['path']}/SKILL.md"
-        print(f"hermes skills install \"{url}\" --name {s['name']}")
+        print(f"python3 ~/.hermes/skills/hermes-hub-browser/scripts/install-from-gitlab.py {s['name']}")
     print("```")
     print()
 
