@@ -4,17 +4,35 @@ import json
 import sys
 import urllib.request
 
+# 直连 URL，国内慢时可切换镜像
 CATALOG_URL = "https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
+# gh-proxy.com 镜像（国内 ≈450KB/s）
+MIRROR_URL = "https://gh-proxy.com/https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
+
+
+def fetch_json(url: str, timeout: int = 10):
+    with urllib.request.urlopen(url, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
 
 def main():
+    data = None
+    err = None
+
+    # 先尝试直连
     try:
-        with urllib.request.urlopen(CATALOG_URL, timeout=10) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+        data = fetch_json(CATALOG_URL)
     except Exception as e:
-        print(f"错误: 无法获取 {CATALOG_URL}")
-        print(f"      {e}")
-        sys.exit(1)
+        err = e
+        # 直连失败，尝试镜像
+        try:
+            print("直连超时，尝试 gh-proxy.com 镜像...", file=sys.stderr)
+            data = fetch_json(MIRROR_URL, timeout=30)
+        except Exception as e2:
+            print(f"错误: 无法获取技能列表", file=sys.stderr)
+            print(f"      直连: {err}", file=sys.stderr)
+            print(f"      镜像: {e2}", file=sys.stderr)
+            sys.exit(1)
 
     skills = data.get("skills", [])
     updated = data.get("updated", "?")
@@ -28,9 +46,7 @@ def main():
     print("|------|---------|------|")
 
     for i, s in enumerate(skills, 1):
-        name = s["name"]
-        desc = s["description"]
-        print(f"| {i} | {name} | {desc} |")
+        print(f"| {i} | {s['name']} | {s['description']} |")
 
     print()
     print("### 安装命令")
