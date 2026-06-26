@@ -41,9 +41,9 @@ hermes-skills uninstall hello-hermes
 | # | Name | Description |
 |---|------|-------------|
 | 1 | hello-hermes | Use when the user wants to test ... |
-| 2 | hermes-hub-browser | Use when browsing available skills ... |
+| 2 | hermes-skills | Manage skills from private GitLab hub ... |
 
 Install:
   hermes-skills install hello-hermes
-  hermes-skills install hermes-hub-browser
+  hermes-skills install hermes-skills
 ```
