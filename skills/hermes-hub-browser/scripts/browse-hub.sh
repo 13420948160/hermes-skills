@@ -4,34 +4,40 @@ set -e
 
 CATALOG_URL="https://raw.githubusercontent.com/13420948160/hermes-skills/main/skills-catalog.json"
 
-data=$(curl -sf "$CATALOG_URL") || {
+tmpfile=$(mktemp)
+if ! curl -sf -o "$tmpfile" "$CATALOG_URL"; then
+    rm -f "$tmpfile"
     echo "错误: 无法获取 $CATALOG_URL"
     exit 1
-}
+fi
 
-echo "$data" | python3 -c "
-import sys, json
+python3 -c "
+import json
 
-d = json.load(sys.stdin)
+with open('$tmpfile') as f:
+    d = json.load(f)
+
 skills = d.get('skills', [])
 updated = d.get('updated', '?')
 
-print(f'🛠  Hermes Skills Hub  —  共 {len(skills)} 个技能')
+print()
+print(f'   Hermes Skills Hub  —  共 {len(skills)} 个技能')
 print(f'   更新时间: {updated}')
 print()
-print(f'{\"序号\":<6} {\"技能名称\":<20} {\"说明\":<40}')
-print('-' * 80)
+print(f'  {\"序号\":<4} {\"技能名称\":<20} {\"说明\"}')
+print(f'  {\"-\"*4} {\"-\"*20} {\"-\"*40}')
 
 for i, s in enumerate(skills, 1):
     name = s['name'][:18]
     desc = s['description'][:38]
-    print(f'{i:<6} {name:<20} {desc}')
+    print(f'  {i:<4} {name:<20} {desc}')
 
 print()
-print('安装命令:')
+print('  安装命令:')
 for s in skills:
-    install_cmd = f'hermes skills install 13420948160/hermes-skills/skills/{s[\"path\"]}'
-    print(f'  {install_cmd}')
+    cmd = 'hermes skills install 13420948160/hermes-skills/skills/' + s['path']
+    print(f'    {cmd}')
 print()
-print('提示: 复制上面的安装命令即可安装对应技能')
 "
+
+rm -f "$tmpfile"
