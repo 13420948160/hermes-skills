@@ -1,40 +1,54 @@
 {
-  "updated": "2026-06-27T03:14:11Z",
+  "updated": "2026-06-27T05:49:32Z",
   "skills": [
     {
       "name": "ehz-iiot-event-center-integration",
       "path": "ehz-iiot-event-center-integration",
-      "description": "极联平台事件中心集成 API 技能，支持事件中心申明管理（列表）和动作管理（列表/消息发布）。"
+      "description": "极联平台事件中心集成 API 技能，支持事件中心申明管理（列表）和动作管理（列表/消息发布）。",
+      "version": "1.0.0",
+      "updated": "2026-06-27"
     },
     {
       "name": "hello-hermes",
       "path": "hello-hermes",
-      "description": "Use when the user wants to test the Hermes skills hub connection. A simple test skill that demonstrates skill structure and verifies your custom hub is reachable."
+      "description": "Use when the user wants to test the Hermes skills hub connection. A simple test skill that demonstrates skill structure and verifies your custom hub is reachable.",
+      "version": "1.0.0",
+      "updated": "2026-06-26"
     },
     {
       "name": "ehz-iiot-interface-integration",
       "path": "ehz-iiot-interface-integration",
-      "description": "极联平台接口管理集成 API 技能，支持应用接入列表、接口服务列表查询、接口文档获取和接口调试调用。"
+      "description": "极联平台接口管理集成 API 技能，支持应用接入列表、接口服务列表查询、接口文档获取和接口调试调用。",
+      "version": "1.0.0",
+      "updated": "2026-06-27"
     },
     {
       "name": "ehz-iiot-data-integration",
       "path": "ehz-iiot-data-integration",
-      "description": "极联平台数据集成 API 技能，支持数据存储管理、表结构查询、标签树、关联表数据查询及表关系管理。"
+      "description": "极联平台数据集成 API 技能，支持数据存储管理、表结构查询、标签树、关联表数据查询及表关系管理。",
+      "version": "1.0.0",
+      "updated": "2026-06-27"
     },
     {
       "name": "ehz-ilcp-workflow",
       "path": "ehz-ilcp-workflow",
-      "description": "ILCP 审批流技能，支持发起审批流、查询审批状态、撤销审批、获取完成记录。"
+      "description": "ILCP 审批流技能，支持发起审批流、查询审批状态、撤销审批、获取完成记录。",
+      "version": "1.0.0",
+      "updated": "2026-06-27"
     },
     {
       "name": "ehz-iiot-device",
       "path": "ehz-iiot-device",
-      "description": "极联平台设备接入相关技能，用于查询设备列表、设备数据、设备反控及实时数据获取。"
+      "description": "极联平台设备接入相关技能，用于查询设备列表、设备数据、设备反控及实时数据获取。",
+      "version": "1.0.0",
+      "updated": "2026-06-27"
     },
     {
       "name": "manage-skills",
       "path": "manage-skills",
-      "description": "Manage skills from private GitLab hub. Browse, install, and uninstall skills using the manage-skills CLI command."
+      "description": "从私有 GitLab 仓库管理 Hermes 技能。使用 manage-skills CLI 命令浏览、安装和卸载技能。",
+      "version": "1.0.0",
+      "updated": "2026-06-27"
     }
   ]
 }

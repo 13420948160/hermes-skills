@@ -1,6 +1,6 @@
 ---
 name: manage-skills
-description: Manage skills from private GitLab hub. Browse, install, and uninstall skills using the manage-skills CLI command.
+description: 从私有 GitLab 仓库管理 Hermes 技能。使用 manage-skills CLI 命令浏览、安装和卸载技能。
 version: 1.0.0
 author: Hermes Agent
 license: MIT
@@ -10,16 +10,16 @@ metadata:
     related_skills: [hello-hermes]
 ---
 
-# Hermes Skills Manager
+# Hermes 技能管理器
 
-## Overview
+## 概述
 
-管理私有 GitLab 仓库中的 Hermes 技能。支持浏览、安装、卸载。
+从私有 GitLab 仓库管理 Hermes 技能，支持浏览、安装和卸载操作。
 
 ## 使用方式
 
 ```bash
-# 查看所有可用技能
+# 浏览所有可用技能
 manage-skills browse
 
 # 安装技能
@@ -29,7 +29,7 @@ manage-skills install hello-hermes
 manage-skills uninstall hello-hermes
 ```
 
-## 前提
+## 前提条件
 
 需在 `~/.hermes/.env` 中配置 `GITLAB_TOKEN=你的Token`
 
@@ -43,7 +43,7 @@ manage-skills uninstall hello-hermes
 | 1 | hello-hermes | Use when the user wants to test ... |
 | 2 | manage-skills | Manage skills from private GitLab hub ... |
 
-Install:
+安装方式：
   manage-skills install hello-hermes
   manage-skills install manage-skills
 ```

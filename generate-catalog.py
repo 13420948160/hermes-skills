@@ -35,10 +35,14 @@ def main():
         with open(os.path.join(root, "SKILL.md"), encoding="utf-8") as f:
             content = f.read()
         fm = parse_frontmatter(content)
+        skill_path = os.path.join(root, "SKILL.md")
+        mtime = datetime.fromtimestamp(os.path.getmtime(skill_path), tz=timezone.utc).strftime("%Y-%m-%d")
         skills.append({
             "name": name,
             "path": skill_dir,
             "description": fm.get("description", ""),
+            "version": fm.get("version", ""),
+            "updated": mtime,
         })
     catalog = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
