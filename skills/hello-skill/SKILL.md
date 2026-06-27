@@ -1,5 +1,5 @@
 ---
-name: hello-hermes
+name: hello-skill
 description: Use when the user wants to test the Hermes skills hub connection. A simple test skill that demonstrates skill structure and verifies your custom hub is reachable.
 version: 1.0.0
 author: Hermes Agent
@@ -10,7 +10,7 @@ metadata:
     related_skills: []
 ---
 
-# Hello Hermes
+# Hello Skill
 
 ## Overview
 
@@ -60,4 +60,4 @@ skills/
 - [ ] `name`, `version`, `author`, `license`, `metadata` fields all present
 - [ ] Committed and pushed to GitHub
 - [ ] `hermes skills install` succeeds
-- [ ] `/skill hello-hermes` loads without error
+- [ ] `/skill hello-skill` loads without error

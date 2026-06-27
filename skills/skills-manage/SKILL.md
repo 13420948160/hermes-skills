@@ -7,7 +7,7 @@ license: MIT
 metadata:
   hermes:
     tags: [hub, install, uninstall, browse, gitlab]
-    related_skills: [hello-hermes]
+    related_skills: [hello-skill]
 ---
 
 # Hermes 技能管理器
@@ -23,10 +23,10 @@ metadata:
 skills-manage browse
 
 # 安装技能
-skills-manage install hello-hermes
+skills-manage install hello-skill
 
 # 卸载技能
-skills-manage uninstall hello-hermes
+skills-manage uninstall hello-skill
 ```
 
 ## 前提条件
@@ -40,10 +40,10 @@ skills-manage uninstall hello-hermes
 
 | # | Name | Description |
 |---|------|-------------|
-| 1 | hello-hermes | Use when the user wants to test ... |
+| 1 | hello-skill | Use when the user wants to test ... |
 | 2 | skills-manage | Manage skills from private GitLab hub ... |
 
 安装方式：
-  skills-manage install hello-hermes
+  skills-manage install hello-skill
   skills-manage install skills-manage
 ```

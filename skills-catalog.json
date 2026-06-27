@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T06:08:18Z",
+  "updated": "2026-06-27T08:30:00Z",
   "skills": [
     {
       "name": "ehz-iiot-event-center-integration",
@@ -9,11 +9,11 @@
       "updated": "2026-06-27"
     },
     {
-      "name": "hello-hermes",
-      "path": "hello-hermes",
+      "name": "hello-skill",
+      "path": "hello-skill",
       "description": "Use when the user wants to test the Hermes skills hub connection. A simple test skill that demonstrates skill structure and verifies your custom hub is reachable.",
       "version": "1.0.0",
-      "updated": "2026-06-26"
+      "updated": "2026-06-27"
     },
     {
       "name": "ehz-iiot-interface-integration",
@@ -44,9 +44,16 @@
       "updated": "2026-06-27"
     },
     {
-      "name": "manage-skills",
-      "path": "manage-skills",
-      "description": "从私有 GitLab 仓库管理 Hermes 技能。使用 manage-skills CLI 命令浏览、安装和卸载技能。",
+      "name": "skills-manage",
+      "path": "skills-manage",
+      "description": "从私有 GitLab 仓库管理 Hermes 技能。使用 skills-manage CLI 命令浏览、安装和卸载技能。",
+      "version": "1.0.0",
+      "updated": "2026-06-27"
+    },
+    {
+      "name": "skill-developer",
+      "path": "skill-developer",
+      "description": "Interactive skill development assistant. Invoke when user wants to create, design, or develop a new skill through conversation. Guides user through skill creation with templates and best practices.",
       "version": "1.0.0",
       "updated": "2026-06-27"
     }
