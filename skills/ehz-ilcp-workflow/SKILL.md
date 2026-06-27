@@ -1,10 +1,13 @@
 ---
 name: ehz-ilcp-workflow
 description: ILCP 审批流技能，支持发起审批流、查询审批状态、撤销审批、获取完成记录。
+version: "1.0.0"
+author: "ehz"
 license: MIT
 metadata:
-  author: "ehz"
-  version: "1.0.0"
+  hermes:
+    tags: [ilcp, workflow, approval]
+    related_skills: []
 ---
 
 # ehz-ilcp-workflow 技能使用说明

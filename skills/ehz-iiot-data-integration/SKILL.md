@@ -1,10 +1,13 @@
 ---
 name: ehz-iiot-data-integration
 description: 极联平台数据集成 API 技能，支持数据存储管理、表结构查询、标签树、关联表数据查询及表关系管理。
+version: "1.0.0"
+author: "ehz"
 license: MIT
 metadata:
-  author: "ehz"
-  version: "1.0.0"
+  hermes:
+    tags: [iiot, data, integration]
+    related_skills: []
 ---
 
 # ehz-iiot-data-integration 技能使用说明

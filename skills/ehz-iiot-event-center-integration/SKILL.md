@@ -1,10 +1,13 @@
 ---
 name: ehz-iiot-event-center-integration
 description: 极联平台事件中心集成 API 技能，支持事件中心申明管理（列表）和动作管理（列表/消息发布）。
+version: "1.0.0"
+author: "ehz"
 license: MIT
 metadata:
-  author: "ehz"
-  version: "1.0.0"
+  hermes:
+    tags: [iiot, event, center, integration]
+    related_skills: []
 ---
 
 # ehz-iiot-event-center-integration 技能使用说明

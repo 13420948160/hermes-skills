@@ -1,10 +1,13 @@
 ---
 name: ehz-iiot-device
 description: 极联平台设备接入相关技能，用于查询设备列表、设备数据、设备反控及实时数据获取。
+version: "1.0.0"
+author: "ehz"
 license: MIT
 metadata:
-  author: "ehz"
-  version: "1.0.0"
+  hermes:
+    tags: [iiot, device, iot]
+    related_skills: []
 ---
 
 # ehz-iiot-device 技能使用说明

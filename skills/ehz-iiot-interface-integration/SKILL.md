@@ -1,10 +1,13 @@
 ---
 name: ehz-iiot-interface-integration
 description: 极联平台接口管理集成 API 技能，支持应用接入列表、接口服务列表查询、接口文档获取和接口调试调用。
+version: "1.0.0"
+author: "ehz"
 license: MIT
 metadata:
-  author: "ehz"
-  version: "1.0.0"
+  hermes:
+    tags: [iiot, interface, integration, api]
+    related_skills: []
 ---
 
 # ehz-iiot-interface-integration 技能使用说明
