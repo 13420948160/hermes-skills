@@ -1,0 +1,980 @@
+{
+  "started_at": "2026-04-01T18:05:17.449774",
+  "finished_at": "2026-04-01T18:05:39.007658",
+  "total_cases": 7,
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "pass_rate": 100.0,
+  "fail_rate": 0.0,
+  "total_elapsed_ms": 8256,
+  "results": [
+    {
+      "name": "数据存储管理-列表查询",
+      "endpoint_path": "/ESBREST/iiot/dataStorage/list",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 1113,
+      "payload": {
+        "isPage": 1,
+        "pageNo": 1,
+        "pageSize": 10
+      },
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": {
+          "records": [
+            {
+              "id": "2029850122467487745",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "entId": "hztest",
+              "tableName": "业务流转信息看板",
+              "tableId": "HZ_TESTaa",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"charset\":\"utf8mb4\",\"database\":\"ehzMES\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"port\":3306,\"host\":\"mysql\",\"type\":\"mysql\",\"username\":\"root\"}",
+              "referTable": "model_HZ_TESTaa",
+              "description": null,
+              "isSys": 0,
+              "isPermanentStorage": null,
+              "dataSaveDays": null,
+              "cfgId": 1978032388497531000
+            },
+            {
+              "id": "2018875289696690177",
+              "createBy": "admin",
+              "createTime": "2026-02-04 10:32:33",
+              "updateBy": null,
+              "updateTime": null,
+              "entId": "hztest",
+              "tableName": "幻灯片数据表",
+              "tableId": "m1120_slides",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "m1120_slides",
+              "description": null,
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 2018875289688301600
+            },
+            {
+              "id": "2018870072443887618",
+              "createBy": "admin",
+              "createTime": "2026-02-04 10:11:49",
+              "updateBy": null,
+              "updateTime": null,
+              "entId": "hztest",
+              "tableName": "设备运行状态表",
+              "tableId": "m1120_device_status",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "m1120_device_status",
+              "description": null,
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 2018870072431304700
+            },
+            {
+              "id": "2018867701747769345",
+              "createBy": "admin",
+              "createTime": "2026-02-04 10:02:24",
+              "updateBy": null,
+              "updateTime": null,
+              "entId": "hztest",
+              "tableName": "设备基本信息表",
+              "tableId": "m1120_device_info",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "m1120_device_info",
+              "description": null,
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 2018867701743575000
+            },
+            {
+              "id": "1948269289401475073",
+              "createBy": "admin",
+              "createTime": "2025-07-24 14:29:30",
+              "updateBy": "admin",
+              "updateTime": "2025-07-24 14:30:10",
+              "entId": "hztest",
+              "tableName": "测试表2",
+              "tableId": "SAL_SaleOrder_copy1",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "SAL_SaleOrder_copy1",
+              "description": null,
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 1948269454535417900
+            },
+            {
+              "id": "1948269186380980226",
+              "createBy": "admin",
+              "createTime": "2025-07-24 14:29:06",
+              "updateBy": "WeiHuaMin",
+              "updateTime": "2025-08-07 09:47:31",
+              "entId": "hztest",
+              "tableName": "测试表1",
+              "tableId": "PUR_PurchaseOrder_copy1",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "PUR_PurchaseOrder_copy1",
+              "description": null,
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 1953271755504717800
+            },
+            {
+              "id": "1947543601012879362",
+              "createBy": "admin",
+              "createTime": "2025-07-22 14:25:53",
+              "updateBy": "admin",
+              "updateTime": "2025-07-22 14:30:42",
+              "entId": "hztest",
+              "tableName": "生产订单表_测试Bug2",
+              "tableId": "PRD_MO_TestBug_2",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "PRD_MO_TestBug_2",
+              "description": "鑫承诺ERP",
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 1947544813288370200
+            },
+            {
+              "id": "1947543541663477762",
+              "createBy": "admin",
+              "createTime": "2025-07-22 14:25:39",
+              "updateBy": "admin",
+              "updateTime": "2025-07-22 14:30:52",
+              "entId": "hztest",
+              "tableName": "生产订单表_测试Bug1",
+              "tableId": "PRD_MO_TestBug_1",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "PRD_MO_TestBug_1",
+              "description": "鑫承诺ERP",
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 1947544855613091800
+            },
+            {
+              "id": "1943546850464645122",
+              "createBy": "admin",
+              "createTime": "2025-07-11 13:44:13",
+              "updateBy": "admin",
+              "updateTime": "2025-12-12 10:59:21",
+              "entId": "hztest",
+              "tableName": "生产订单表_bak",
+              "tableId": "PRD_MO_bak",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "PRD_MO_copy1",
+              "description": "鑫承诺ERP",
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 1999313089645719600
+            },
+            {
+              "id": "1928340275837734914",
+              "createBy": "admin",
+              "createTime": "2025-05-30 14:38:43",
+              "updateBy": "admin",
+              "updateTime": "2025-06-03 11:45:47",
+              "entId": "hztest",
+              "tableName": "金蝶云星空表",
+              "tableId": "Kingdee_Version",
+              "tableType": "0",
+              "type": "mysql",
+              "tags": "",
+              "cfg": "{\"host\":\"mysql\",\"port\":3306,\"database\":\"ehzOS\",\"username\":\"root\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"charset\":\"utf8mb4\"}",
+              "referTable": "kingdee_erp",
+              "description": null,
+              "isSys": 0,
+              "isPermanentStorage": "1",
+              "dataSaveDays": null,
+              "cfgId": 1929746306260926500
+            }
+          ],
+          "total": 215,
+          "size": 10,
+          "current": 1,
+          "orders": [],
+          "optimizeCountSql": true,
+          "searchCount": true,
+          "countId": null,
+          "maxLimit": null,
+          "pages": 22
+        },
+        "timestamp": 1775037852761,
+        "requestId": "8a49804a9d454a98019d48802c591ea8"
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "数据存储管理-获取表结构数据",
+      "endpoint_path": "/ESBREST/iiot/dataStorage/getTableStructure",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 2,
+      "elapsed_ms": 1118,
+      "payload": {
+        "table_id": "HZ_TESTaa"
+      },
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": {
+          "is_permanent_storage": null,
+          "create_time": "2026-03-06 17:22:37",
+          "cfg": "{\"charset\":\"utf8mb4\",\"database\":\"ehzMES\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"port\":3306,\"host\":\"mysql\",\"type\":\"mysql\",\"username\":\"root\"}",
+          "data_save_days": null,
+          "description": null,
+          "cfg_id": 1978032388497531000,
+          "table_id": "HZ_TESTaa",
+          "type": "mysql",
+          "table_name": "业务流转信息看板",
+          "tags": "",
+          "create_by": "admin",
+          "refer_table": "model_HZ_TESTaa",
+          "update_time": null,
+          "ent_id": "hztest",
+          "is_sys": 0,
+          "tableFieldList": [
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "cca",
+              "type": "string",
+              "name": "cca",
+              "description": "cca"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "ccb",
+              "type": "string",
+              "name": "ccb",
+              "description": "ccb"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "ccc",
+              "type": "string",
+              "name": "ccc",
+              "description": "ccc"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "ccd",
+              "type": "number",
+              "name": "ccd",
+              "description": "ccd"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "eqpQty",
+              "type": "number",
+              "name": "设备数量",
+              "description": "设备数量"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "mdsa",
+              "type": "number",
+              "name": "mdsa",
+              "description": "mdsa"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test",
+              "type": "number",
+              "name": "测试属性",
+              "description": "测试属性"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test01",
+              "type": "number",
+              "name": "测试标签01",
+              "description": "测试标签01"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test1",
+              "type": "string",
+              "name": "测试属性1",
+              "description": "测试属性1"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test101",
+              "type": "number",
+              "name": "test101",
+              "description": "test101"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "ces01",
+              "type": "integer",
+              "name": "测试事件01",
+              "description": "测试事件01"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test11",
+              "type": "integer",
+              "name": "1111",
+              "description": "1111"
+            },
+            {
+              "id": null,
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "tes_0000",
+              "type": "integer",
+              "name": "test123",
+              "description": "test123"
+            }
+          ],
+          "id": "2029850122467487745",
+          "update_by": null,
+          "table_type": "0"
+        },
+        "timestamp": 1775037865928,
+        "requestId": "8a49804a9d454a98019d48805fc81eab"
+      },
+      "error_message": "iiot 接口调用失败: success=False, code=None, message=读取响应超时",
+      "stack_trace": null
+    },
+    {
+      "name": "系统-标签表-获取标签树",
+      "endpoint_path": "/ESBREST/iiot/SystemTag/getTagsTree",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 1009,
+      "payload": {
+        "type": "storage"
+      },
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": [
+          {
+            "children": [
+              {
+                "id": "1",
+                "title": "数据采集",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eac"
+              },
+              {
+                "id": "2",
+                "title": "数据分析",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ead"
+              },
+              {
+                "id": "3",
+                "title": "应用开发",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eae"
+              },
+              {
+                "id": "4",
+                "title": "流程开发",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eaf"
+              }
+            ],
+            "id": "8a49804a9d454a98019d488063c11eb0",
+            "title": "基础平台",
+            "type": 1,
+            "key": "8a49804a9d454a98019d488063c11eb1"
+          },
+          {
+            "children": [
+              {
+                "id": "1626510332623847426",
+                "title": "系统日志",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb2"
+              },
+              {
+                "id": "1626510332628041729",
+                "title": "设备日志",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb3"
+              },
+              {
+                "id": "1626510332628041730",
+                "title": "操作日志",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb4"
+              },
+              {
+                "id": "1626510332628041731",
+                "title": "看板报表",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb5"
+              },
+              {
+                "id": "1626510332628041732",
+                "title": "生产报表",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb6"
+              },
+              {
+                "id": "1626510332628041733",
+                "title": "用户报表",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb7"
+              },
+              {
+                "id": "1626510332628041734",
+                "title": "系统报表",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb8"
+              },
+              {
+                "id": "1626510332632236033",
+                "title": "混合存储类",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eb9"
+              }
+            ],
+            "id": "8a49804a9d454a98019d488063c11eba",
+            "title": "数据存储",
+            "type": 1,
+            "key": "8a49804a9d454a98019d488063c11ebb"
+          },
+          {
+            "children": [
+              {
+                "id": "10",
+                "title": "石油化工",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ebc"
+              },
+              {
+                "id": "11",
+                "title": "电子电器",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ebd"
+              },
+              {
+                "id": "5",
+                "title": "通用行业",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ebe"
+              },
+              {
+                "id": "6",
+                "title": "装备制造",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ebf"
+              },
+              {
+                "id": "7",
+                "title": "机械加工",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec0"
+              },
+              {
+                "id": "8",
+                "title": "汽车制造",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec1"
+              },
+              {
+                "id": "9",
+                "title": "食品加工",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec2"
+              }
+            ],
+            "id": "8a49804a9d454a98019d488063c11ec3",
+            "title": "行业",
+            "type": 1,
+            "key": "8a49804a9d454a98019d488063c11ec4"
+          },
+          {
+            "children": [
+              {
+                "id": "12",
+                "title": "标准协议",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec5"
+              },
+              {
+                "id": "13",
+                "title": "modbus",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec6"
+              },
+              {
+                "id": "14",
+                "title": "OPC",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec7"
+              },
+              {
+                "id": "15",
+                "title": "SNMP",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec8"
+              },
+              {
+                "id": "16",
+                "title": "RDBMS",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ec9"
+              },
+              {
+                "id": "17",
+                "title": "文档",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11eca"
+              },
+              {
+                "id": "18",
+                "title": "西门子",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ecb"
+              },
+              {
+                "id": "19",
+                "title": "三菱",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ecc"
+              },
+              {
+                "id": "20",
+                "title": "汇川",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ecd"
+              },
+              {
+                "id": "21",
+                "title": "欧姆龙",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ece"
+              },
+              {
+                "id": "22",
+                "title": "松下",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ecf"
+              },
+              {
+                "id": "23",
+                "title": "信捷",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ed0"
+              },
+              {
+                "id": "24",
+                "title": "广州数控",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ed1"
+              },
+              {
+                "id": "25",
+                "title": "通用电器",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ed2"
+              },
+              {
+                "id": "26",
+                "title": "发那科",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ed3"
+              },
+              {
+                "id": "27",
+                "title": "其他协议",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ed4"
+              }
+            ],
+            "id": "8a49804a9d454a98019d488063c11ed5",
+            "title": "工业设备",
+            "type": 1,
+            "key": "8a49804a9d454a98019d488063c11ed6"
+          },
+          {
+            "children": [
+              {
+                "id": "1726495261257728001",
+                "title": "设备01",
+                "type": 1,
+                "key": "8a49804a9d454a98019d488063c11ed7"
+              }
+            ],
+            "id": "8a49804a9d454a98019d488063c11ed8",
+            "title": "农业设备",
+            "type": 1,
+            "key": "8a49804a9d454a98019d488063c11ed9"
+          }
+        ],
+        "timestamp": 1775037866945,
+        "requestId": "8a49804a9d454a98019d488063c11eda"
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "获取关联表数据",
+      "endpoint_path": "/ESBREST/iiot/dataStorage/getReferTableData",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 1403,
+      "payload": {
+        "pageNo": 1,
+        "pageSize": 10,
+        "table_id": "HZ_TESTaa",
+        "value": "值"
+      },
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": {
+          "total": 0,
+          "current": 1,
+          "pages": 0,
+          "size": 10,
+          "records": []
+        },
+        "timestamp": 1775037868315,
+        "requestId": "8a49804a9d454a98019d4880691b1edc"
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "数据存储管理-获取表字段信息",
+      "endpoint_path": "/ESBREST/iiot/dataStorage/tableFieldList",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 1314,
+      "payload": {
+        "isPage": 1,
+        "pageNo": 1,
+        "pageSize": 10,
+        "table_id": "HZ_TESTaa"
+      },
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": {
+          "records": [
+            {
+              "id": "2029850122790449153",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "cca",
+              "type": "string",
+              "name": "cca",
+              "description": "cca"
+            },
+            {
+              "id": "2029850122811420674",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "ccb",
+              "type": "string",
+              "name": "ccb",
+              "description": "ccb"
+            },
+            {
+              "id": "2029850122824003586",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "ccc",
+              "type": "string",
+              "name": "ccc",
+              "description": "ccc"
+            },
+            {
+              "id": "2029850122836586497",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "ccd",
+              "type": "number",
+              "name": "ccd",
+              "description": "ccd"
+            },
+            {
+              "id": "2029850122844975106",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "eqpQty",
+              "type": "number",
+              "name": "设备数量",
+              "description": "设备数量"
+            },
+            {
+              "id": "2029850122861752322",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "mdsa",
+              "type": "number",
+              "name": "mdsa",
+              "description": "mdsa"
+            },
+            {
+              "id": "2029850122870140929",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test",
+              "type": "number",
+              "name": "测试属性",
+              "description": "测试属性"
+            },
+            {
+              "id": "2029850122882723842",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test01",
+              "type": "number",
+              "name": "测试标签01",
+              "description": "测试标签01"
+            },
+            {
+              "id": "2029850122895306754",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test1",
+              "type": "string",
+              "name": "测试属性1",
+              "description": "测试属性1"
+            },
+            {
+              "id": "2029850122903695362",
+              "createBy": "admin",
+              "createTime": "2026-03-06 17:22:37",
+              "updateBy": null,
+              "updateTime": null,
+              "field": "test101",
+              "type": "number",
+              "name": "test101",
+              "description": "test101"
+            }
+          ],
+          "total": 13,
+          "size": 10,
+          "current": 1,
+          "orders": [],
+          "optimizeCountSql": true,
+          "searchCount": true,
+          "countId": null,
+          "maxLimit": null,
+          "pages": 2
+        },
+        "timestamp": 1775037869633,
+        "requestId": "8a49804a9d454a98019d48806e411edd"
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "数据存储管理-查询所有表关系列表",
+      "endpoint_path": "/ESBREST/faas/code/getTableRelationshipList",
+      "method": "POST",
+      "api_type": "faas",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 1193,
+      "payload": {
+        "page": 1,
+        "pageSize": 10
+      },
+      "response": {
+        "errorCode": 0,
+        "errorMsg": "操作成功",
+        "return": {
+          "total": 2,
+          "page": 1,
+          "pageSize": 10,
+          "list": [
+            {
+              "id": 19,
+              "main_table": "TEST_sys_role",
+              "foreign_table": "TEST_sys_role_permission",
+              "relationship_type": "one-to-many",
+              "relationship_description": "",
+              "created_by": "admin",
+              "created_time": "2026-03-10 20:10:25",
+              "updated_by": "admin",
+              "updated_time": "2026-03-10 20:10:25",
+              "field_count": 1
+            },
+            {
+              "id": 17,
+              "main_table": "PRD_MO_TestBug_1",
+              "foreign_table": "PRD_MO_TestBug_2",
+              "relationship_type": "one-to-one",
+              "relationship_description": "",
+              "created_by": "admin",
+              "created_time": "2026-03-10 12:08:48",
+              "updated_by": "admin",
+              "updated_time": "2026-03-10 20:03:22",
+              "field_count": 2
+            }
+          ]
+        }
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "获取关系详情接口",
+      "endpoint_path": "/ESBREST/faas/code/getTableRelationshipDetail",
+      "method": "POST",
+      "api_type": "faas",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 1106,
+      "payload": {
+        "id": 19
+      },
+      "response": {
+        "errorCode": 0,
+        "errorMsg": "操作成功",
+        "return": {
+          "id": 19,
+          "mainTable": "TEST_sys_role",
+          "foreignTable": "TEST_sys_role_permission",
+          "relationshipType": "one-to-many",
+          "relationshipDescription": "",
+          "fieldMappings": [
+            {
+              "id": 61,
+              "main_field": "role_code",
+              "foreign_field": "role_id",
+              "mapping_order": 1
+            }
+          ],
+          "createdBy": "admin",
+          "createdTime": "2026-03-10 20:10:25",
+          "updatedBy": "admin",
+          "updatedTime": "2026-03-10 20:10:25"
+        },
+        "ts": 3.7330910563468933
+      },
+      "error_message": null,
+      "stack_trace": null
+    }
+  ]
+}

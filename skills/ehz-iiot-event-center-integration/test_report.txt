@@ -1,0 +1,91 @@
+================================================================================
+极联平台事件中心集成 API 兼容性测试报告
+================================================================================
+测试时间  : 2026-04-07T09:54:51.660699 ~ 2026-04-07T09:57:56.960773
+总用例数  : 4
+通过      : 3 (75.0%)
+失败      : 1 (25.0%)
+跳过      : 0
+总耗时    : 12848ms
+================================================================================
+
+[[PASS]] PASSED  | 事件中心申明表-分页列表查询
+    接口  : GET /ESBREST/iiot/event/EventDefine/list (iiot)
+    请求  : {"pageNo": 1, "pageSize": 10}
+    尝试  : 1 次
+    耗时  : 1620ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": {
+        "records": [
+          {
+            "id": "2019323421428367361",
+            "name": "测试事件中心-35749e09",
+            "type": "cron",
+            "cron": "0 * * * * ? *",
+            "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+            "topic": "TEST-TOPIC-1775119483-39e9a588",
+            "description": "测试事件中心功能",
+            "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\
+        ... (已截断)
+
+[[PASS]] PASSED  | 事件中心动作表-分页列表查询
+    接口  : GET /ESBREST/iiot/event/eventAction/list (iiot)
+    请求  : {"pageNo": 1, "pageSize": 10}
+    尝试  : 1 次
+    耗时  : 778ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": {
+        "records": [
+          {
+            "id": "2039974450028834818",
+            "defineName": "系统设备上线与离线通知",
+            "defineTopic": "TEST-MASTER-IOT-SYSTEM-THING-ONLINE",
+            "actionName": "设备上线与离线通知转发到kafka",
+            "actionAlias": null,
+            "actionType": "kafka",
+            "eventAction": "{\"set\":{\"field\":\"\",\"text\":\"\",\"value\":\"\"},\"service\":{},\"kafka\":{\"password\":\"\",\"address\":\"\",\"topic\":\"TEST-MASTER-IOT-S
+        ... (已截断)
+
+[[PASS]] PASSED  | 事件中心申明表-分页列表查询-导出专用
+    接口  : GET /ESBREST/iiot/event/EventDefine/listAll (iiot)
+    尝试  : 1 次
+    耗时  : 425ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": {
+        "records": [
+          {
+            "id": "2019323421428367361",
+            "name": "测试事件中心-35749e09",
+            "type": "cron",
+            "cron": "0 * * * * ? *",
+            "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+            "topic": "TEST-TOPIC-1775119483-39e9a588",
+            "description": "测试事件中心功能",
+            "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\
+        ... (已截断)
+
+[[FAIL]] FAILED  | 事件中心动作表-发布事件消息到指定队列类型
+    接口  : POST /ESBREST/faas/coode/sendToEventMessage (faas)
+    请求  : {"topic": "TEST-TOPIC-1775526894-31814092", "type": "kafka", "msgs": {"name": "test", "value": 123}}
+    尝试  : 15 次
+    耗时  : 10025ms
+    错误  : faas 类型响应缺少 errorCode 字段，实际: ['success', 'code', 'message']
+    响应  :
+    {
+      "success": false,
+      "code": 408,
+      "message": "读取响应超时"
+    }
+================================================================================

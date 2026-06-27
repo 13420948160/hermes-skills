@@ -1,0 +1,1209 @@
+{
+  "started_at": "2026-04-07T09:54:51.660699",
+  "finished_at": "2026-04-07T09:57:56.960773",
+  "total_cases": 4,
+  "passed": 3,
+  "failed": 1,
+  "skipped": 0,
+  "pass_rate": 75.0,
+  "fail_rate": 25.0,
+  "total_elapsed_ms": 12848,
+  "results": [
+    {
+      "name": "事件中心申明表-分页列表查询",
+      "endpoint_path": "/ESBREST/iiot/event/EventDefine/list",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 1620,
+      "payload": {
+        "pageNo": 1,
+        "pageSize": 10
+      },
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": {
+          "records": [
+            {
+              "id": "2019323421428367361",
+              "name": "测试事件中心-35749e09",
+              "type": "cron",
+              "cron": "0 * * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-TOPIC-1775119483-39e9a588",
+              "description": "测试事件中心功能",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 244,
+              "status": "0",
+              "createBy": "admin",
+              "createTime": "2026-02-05 16:13:16",
+              "updateBy": "admin",
+              "updateTime": "2026-04-02 16:44:03",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1820702072551346177",
+              "name": "hmtests",
+              "type": "cron",
+              "cron": "0 0/3 * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-hmtsts-time",
+              "description": "",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 100,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2024-08-06 14:02:56",
+              "updateBy": "admin",
+              "updateTime": "2025-11-28 10:56:30",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1983353702376366082",
+              "name": "系统设备上线与离线通知",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-THING-ONLINE",
+              "description": "系统设备上线与离线通知",
+              "dataFormat": "[{\"code\":\"ecode\",\"name\":\"设备编码\",\"type\":\"string\",\"describe\":\"xxx\"},{\"code\":\"areaPath\",\"name\":\"设备路径\",\"type\":\"string\",\"describe\":\"{工厂/车间/产线/温度传感器}\"},{\"code\":\"level\",\"name\":\"告警级别\",\"type\":\"string\",\"describe\":\"{紧急/一般}\"},{\"code\":\"state\",\"name\":\"状态变更\",\"type\":\"string\",\"describe\":\"{离线/上线}\"},{\"code\":\"time\",\"name\":\"时间\",\"type\":\"time\",\"describe\":\"{YYYY-MM-DD HH:mm}\"},{\"code\":\"relateDatas\",\"name\":\"相关数据\",\"type\":\"json\",\"describe\":\"电压/电流等关键指标\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-10-29 10:02:26",
+              "updateBy": "admin",
+              "updateTime": "2025-10-30 10:01:06",
+              "dataFormatJson": [
+                {
+                  "code": "ecode",
+                  "name": "设备编码",
+                  "describe": "xxx",
+                  "type": "string"
+                },
+                {
+                  "code": "areaPath",
+                  "name": "设备路径",
+                  "describe": "{工厂/车间/产线/温度传感器}",
+                  "type": "string"
+                },
+                {
+                  "code": "level",
+                  "name": "告警级别",
+                  "describe": "{紧急/一般}",
+                  "type": "string"
+                },
+                {
+                  "code": "state",
+                  "name": "状态变更",
+                  "describe": "{离线/上线}",
+                  "type": "string"
+                },
+                {
+                  "code": "time",
+                  "name": "时间",
+                  "describe": "{YYYY-MM-DD HH:mm}",
+                  "type": "time"
+                },
+                {
+                  "code": "relateDatas",
+                  "name": "相关数据",
+                  "describe": "电压/电流等关键指标",
+                  "type": "json"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1950015492004597761",
+              "name": "变量系统模块",
+              "type": "cron",
+              "cron": "* * * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-VARIABLE-SYSTEM",
+              "description": "",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 218,
+              "status": "0",
+              "createBy": "admin",
+              "createTime": "2025-07-29 10:08:17",
+              "updateBy": "WeiHuaMin",
+              "updateTime": "2025-07-31 16:37:57",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1920727939414433794",
+              "name": "定时消息触发",
+              "type": "cron",
+              "cron": "0 0/2 * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-msg-test",
+              "description": "",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 190,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-05-09 14:30:01",
+              "updateBy": "admin",
+              "updateTime": "2025-07-09 16:08:54",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1920741883994644482",
+              "name": "系统设备告警事件",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-THING-ALARM",
+              "description": "",
+              "dataFormat": "[{\"code\":\"eid\",\"name\":\"设备ID\",\"describe\":\"设备ID\",\"type\":\"string\"},{\"code\":\"entId\",\"name\":\"entId\",\"describe\":\"entId\",\"type\":\"string\"},{\"code\":\"alarmid\",\"name\":\"事件标识\",\"describe\":\"事件标识\",\"type\":\"string\"},{\"code\":\"name\",\"name\":\"事件名称\",\"describe\":\"事件名称\",\"type\":\"string\"},{\"code\":\"currentValue\",\"name\":\"当前值\",\"describe\":\"当前值\",\"type\":\"string\"},{\"code\":\"type\",\"name\":\"告警类型\",\"describe\":\"make:产生,clear: 消除\",\"type\":\"string\"},{\"code\":\"areaPath\",\"name\":\"分区路径\",\"describe\":\"分区路径\",\"type\":\"string\"},{\"code\":\"timestamp\",\"name\":\"告警产生时间\",\"describe\":\"告警产生时间\",\"type\":\"string\"},{\"code\":\"ASN\",\"name\":\"告警标识\",\"describe\":\"告警标识\",\"type\":\"string\"},{\"code\":\"name\",\"name\":\"事件名称\",\"describe\":\"事件名称\",\"type\":\"string\"},{\"code\":\"relateDatas\",\"name\":\"告警产生属性\",\"describe\":\"告警产生属性\",\"type\":\"string\"},{\"code\":\"esn\",\"name\":\"设备接入号\",\"describe\":\"设备接入号\",\"type\":\"string\"},{\"code\":\"emodelid\",\"name\":\"模型id\",\"describe\":\"模型id\",\"type\":\"string\"},{\"code\":\"areaId\",\"name\":\"分区id\",\"describe\":\"分区id\",\"type\":\"string\"},{\"code\":\"ecode\",\"name\":\"设备编码\",\"describe\":\"设备编码\",\"type\":\"string\"},{\"code\":\"ename\",\"name\":\"设备名称\",\"describe\":\"设备名称\",\"type\":\"string\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-05-09 15:25:25",
+              "updateBy": "admin",
+              "updateTime": "2025-05-21 20:27:02",
+              "dataFormatJson": [
+                {
+                  "code": "eid",
+                  "name": "设备ID",
+                  "describe": "设备ID",
+                  "type": "string"
+                },
+                {
+                  "code": "entId",
+                  "name": "entId",
+                  "describe": "entId",
+                  "type": "string"
+                },
+                {
+                  "code": "alarmid",
+                  "name": "事件标识",
+                  "describe": "事件标识",
+                  "type": "string"
+                },
+                {
+                  "code": "name",
+                  "name": "事件名称",
+                  "describe": "事件名称",
+                  "type": "string"
+                },
+                {
+                  "code": "currentValue",
+                  "name": "当前值",
+                  "describe": "当前值",
+                  "type": "string"
+                },
+                {
+                  "code": "type",
+                  "name": "告警类型",
+                  "describe": "make:产生,clear: 消除",
+                  "type": "string"
+                },
+                {
+                  "code": "areaPath",
+                  "name": "分区路径",
+                  "describe": "分区路径",
+                  "type": "string"
+                },
+                {
+                  "code": "timestamp",
+                  "name": "告警产生时间",
+                  "describe": "告警产生时间",
+                  "type": "string"
+                },
+                {
+                  "code": "ASN",
+                  "name": "告警标识",
+                  "describe": "告警标识",
+                  "type": "string"
+                },
+                {
+                  "code": "name",
+                  "name": "事件名称",
+                  "describe": "事件名称",
+                  "type": "string"
+                },
+                {
+                  "code": "relateDatas",
+                  "name": "告警产生属性",
+                  "describe": "告警产生属性",
+                  "type": "string"
+                },
+                {
+                  "code": "esn",
+                  "name": "设备接入号",
+                  "describe": "设备接入号",
+                  "type": "string"
+                },
+                {
+                  "code": "emodelid",
+                  "name": "模型id",
+                  "describe": "模型id",
+                  "type": "string"
+                },
+                {
+                  "code": "areaId",
+                  "name": "分区id",
+                  "describe": "分区id",
+                  "type": "string"
+                },
+                {
+                  "code": "ecode",
+                  "name": "设备编码",
+                  "describe": "设备编码",
+                  "type": "string"
+                },
+                {
+                  "code": "ename",
+                  "name": "设备名称",
+                  "describe": "设备名称",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "2039624644457672706",
+              "name": "测试事件中心-44cd04dd",
+              "type": "cron",
+              "cron": null,
+              "cond": null,
+              "topic": "TEST-TOPIC-1775119454-116a93bb",
+              "description": null,
+              "dataFormat": null,
+              "jobId": 0,
+              "status": "0",
+              "createBy": "admin",
+              "createTime": "2026-04-02 16:43:04",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": null,
+              "condJson": null
+            },
+            {
+              "id": "2019332878871236610",
+              "name": "主生产计划",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"field\":\"\",\"eid\":\"\",\"text\":\"\",\"condition\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-msg-testhhh",
+              "description": "",
+              "dataFormat": "[{\"code\":\"1\",\"name\":\"字段1\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"12\",\"name\":\"字段2\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"3\",\"name\":\"字段3\",\"type\":\"string\",\"describe\":\"\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "WeiHuaMin",
+              "createTime": "2026-02-05 16:50:50",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": [
+                {
+                  "code": "1",
+                  "name": "字段1",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "12",
+                  "name": "字段2",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "3",
+                  "name": "字段3",
+                  "describe": "",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1980145102204002306",
+              "name": "调用外部异常事件提醒",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"field\":\"\",\"eid\":\"\",\"text\":\"\",\"condition\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-EXCEPTION-EVENT",
+              "description": "",
+              "dataFormat": "[{\"code\":\"server\",\"name\":\"服务名称\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"type\",\"name\":\"类型\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"code\",\"name\":\"编码\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"msg\",\"name\":\"信息\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"desc\",\"name\":\"描述\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"time\",\"name\":\"时间\",\"type\":\"string\",\"describe\":\"\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-10-20 13:32:36",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": [
+                {
+                  "code": "server",
+                  "name": "服务名称",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "type",
+                  "name": "类型",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "code",
+                  "name": "编码",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "msg",
+                  "name": "信息",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "desc",
+                  "name": "描述",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "time",
+                  "name": "时间",
+                  "describe": "",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1971039547822645249",
+              "name": "系统设备消息事件",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"field\":\"\",\"eid\":\"\",\"text\":\"\",\"condition\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-THING-MESSAGE",
+              "description": "系统设备消息事件",
+              "dataFormat": "[{\"code\":\"eid\",\"name\":\"设备ID\",\"type\":\"string\",\"describe\":\"设备ID\"},{\"code\":\"entId\",\"name\":\"entId\",\"type\":\"string\",\"describe\":\"entId\"},{\"code\":\"msgid\",\"name\":\"消息标识\",\"type\":\"string\",\"describe\":\"消息标识\"},{\"code\":\"name\",\"name\":\"消息名称\",\"type\":\"string\",\"describe\":\"消息名称\"},{\"code\":\"type\",\"name\":\"消息类型\",\"type\":\"string\",\"describe\":\"make:产生,clear: 消除\"},{\"code\":\"relateDatas\",\"name\":\"关联属性信息\",\"type\":\"json\",\"describe\":\"关联属性信息\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-09-25 10:30:23",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": [
+                {
+                  "code": "eid",
+                  "name": "设备ID",
+                  "describe": "设备ID",
+                  "type": "string"
+                },
+                {
+                  "code": "entId",
+                  "name": "entId",
+                  "describe": "entId",
+                  "type": "string"
+                },
+                {
+                  "code": "msgid",
+                  "name": "消息标识",
+                  "describe": "消息标识",
+                  "type": "string"
+                },
+                {
+                  "code": "name",
+                  "name": "消息名称",
+                  "describe": "消息名称",
+                  "type": "string"
+                },
+                {
+                  "code": "type",
+                  "name": "消息类型",
+                  "describe": "make:产生,clear: 消除",
+                  "type": "string"
+                },
+                {
+                  "code": "relateDatas",
+                  "name": "关联属性信息",
+                  "describe": "关联属性信息",
+                  "type": "json"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            }
+          ],
+          "total": 10,
+          "size": 10,
+          "current": 1,
+          "orders": [],
+          "optimizeCountSql": true,
+          "searchCount": true,
+          "countId": null,
+          "maxLimit": null,
+          "pages": 1
+        },
+        "timestamp": 1775526820254,
+        "requestId": "8a498c409d65a298019d65a5399e0019"
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "事件中心动作表-分页列表查询",
+      "endpoint_path": "/ESBREST/iiot/event/eventAction/list",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 778,
+      "payload": {
+        "pageNo": 1,
+        "pageSize": 10
+      },
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": {
+          "records": [
+            {
+              "id": "2039974450028834818",
+              "defineName": "系统设备上线与离线通知",
+              "defineTopic": "TEST-MASTER-IOT-SYSTEM-THING-ONLINE",
+              "actionName": "设备上线与离线通知转发到kafka",
+              "actionAlias": null,
+              "actionType": "kafka",
+              "eventAction": "{\"set\":{\"field\":\"\",\"text\":\"\",\"value\":\"\"},\"service\":{},\"kafka\":{\"password\":\"\",\"address\":\"\",\"topic\":\"TEST-MASTER-IOT-SYSTEM-THING-ONLINE-zhuanfa\",\"user\":\"\"},\"rabbitmq\":{\"password\":\"\",\"address\":\"\",\"topic\":\"\",\"exchange\":\"\",\"user\":\"\",\"routingKey\":\"\",\"topicType\":1},\"script\":\"LyogICDkuovku7blj4LmlbDvvJoNCiAqICBAdHlwZS3lrZfnrKbkuLIgICAgIOWQjeensO+8muWRiuitpuexu+Weiw0KICogIEB2YWx1ZS3mlbDlgLwgICAgICAg5ZCN56ew77ya5pWw5o2u5YC8ICANCiAqLw0KZnVuY3Rpb24gZnVuYyAoZWRhdGFzKSB7DQogIC8qICDns7vnu5/mnI3liqHvvJpNRVMvc2V0RXF1aXBtZW50RGF0YQ0KICAgKiAgQHBkYXRhcy5pZC3lrZfnrKbkuLIgICAgIOWQjeensO+8muimgeiuvue9rueahOaMh+aghw0KICAgKiAgQHBkYXRhcy52YWx1ZS3mlbDlgLwgICAgICAg5ZCN56ew77ya6KaB6K6+572u55qE5oyH5qCH5pWw5YC8IA0KICAgKi8gDQogICAgdmFyIGRhdGFzID0ge307DQogICAgZGF0YXMuaWQgPSAibGFiIjsNCiAgICBkYXRhcy52YWx1ZSA9IDM0LjU7DQogICAgdmFyIHJkYXRhID0gc3lzLkZ1bmN0aW9uKCJFQU0iLCAic2V0RXF1aXBtZW50RGF0YSIsIGRhdGFzLCBmdW5jdGlvbihlcnIsIHJkYXRhKSB7IH0pOw0KICAgIHN5cy5EZWJ1ZygwLCAgcmRhdGEpOw0KICAgIHN5cy5EZWJ1ZygwLCAi5omn6KGM5a6M5q+VIik7DQp9\"}",
+              "actionStatus": "1",
+              "createBy": "admin",
+              "createTime": "2026-04-03 15:53:04",
+              "updateBy": "admin",
+              "updateTime": "2026-04-03 15:53:18",
+              "eventActionJson": {
+                "set": {
+                  "field": "",
+                  "text": "",
+                  "value": ""
+                },
+                "service": {},
+                "kafka": {
+                  "password": "",
+                  "address": "",
+                  "topic": "TEST-MASTER-IOT-SYSTEM-THING-ONLINE-zhuanfa",
+                  "user": ""
+                },
+                "rabbitmq": {
+                  "password": "",
+                  "address": "",
+                  "topic": "",
+                  "exchange": "",
+                  "user": "",
+                  "routingKey": "",
+                  "topicType": 1
+                },
+                "script": "LyogICDkuovku7blj4LmlbDvvJoNCiAqICBAdHlwZS3lrZfnrKbkuLIgICAgIOWQjeensO+8muWRiuitpuexu+Weiw0KICogIEB2YWx1ZS3mlbDlgLwgICAgICAg5ZCN56ew77ya5pWw5o2u5YC8ICANCiAqLw0KZnVuY3Rpb24gZnVuYyAoZWRhdGFzKSB7DQogIC8qICDns7vnu5/mnI3liqHvvJpNRVMvc2V0RXF1aXBtZW50RGF0YQ0KICAgKiAgQHBkYXRhcy5pZC3lrZfnrKbkuLIgICAgIOWQjeensO+8muimgeiuvue9rueahOaMh+aghw0KICAgKiAgQHBkYXRhcy52YWx1ZS3mlbDlgLwgICAgICAg5ZCN56ew77ya6KaB6K6+572u55qE5oyH5qCH5pWw5YC8IA0KICAgKi8gDQogICAgdmFyIGRhdGFzID0ge307DQogICAgZGF0YXMuaWQgPSAibGFiIjsNCiAgICBkYXRhcy52YWx1ZSA9IDM0LjU7DQogICAgdmFyIHJkYXRhID0gc3lzLkZ1bmN0aW9uKCJFQU0iLCAic2V0RXF1aXBtZW50RGF0YSIsIGRhdGFzLCBmdW5jdGlvbihlcnIsIHJkYXRhKSB7IH0pOw0KICAgIHN5cy5EZWJ1ZygwLCAgcmRhdGEpOw0KICAgIHN5cy5EZWJ1ZygwLCAi5omn6KGM5a6M5q+VIik7DQp9"
+              }
+            }
+          ],
+          "total": 1,
+          "size": 10,
+          "current": 1,
+          "orders": [],
+          "optimizeCountSql": true,
+          "searchCount": true,
+          "countId": null,
+          "maxLimit": null,
+          "pages": 1
+        },
+        "timestamp": 1775526821048,
+        "requestId": "8a498c409d65a298019d65a53cb8001a"
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "事件中心申明表-分页列表查询-导出专用",
+      "endpoint_path": "/ESBREST/iiot/event/EventDefine/listAll",
+      "method": "GET",
+      "api_type": "iiot",
+      "status": "passed",
+      "attempt": 1,
+      "elapsed_ms": 425,
+      "payload": {},
+      "response": {
+        "success": true,
+        "message": "",
+        "code": 200,
+        "result": {
+          "records": [
+            {
+              "id": "2019323421428367361",
+              "name": "测试事件中心-35749e09",
+              "type": "cron",
+              "cron": "0 * * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-TOPIC-1775119483-39e9a588",
+              "description": "测试事件中心功能",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 244,
+              "status": "0",
+              "createBy": "admin",
+              "createTime": "2026-02-05 16:13:16",
+              "updateBy": "admin",
+              "updateTime": "2026-04-02 16:44:03",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1820702072551346177",
+              "name": "hmtests",
+              "type": "cron",
+              "cron": "0 0/3 * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-hmtsts-time",
+              "description": "",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 100,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2024-08-06 14:02:56",
+              "updateBy": "admin",
+              "updateTime": "2025-11-28 10:56:30",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1983353702376366082",
+              "name": "系统设备上线与离线通知",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-THING-ONLINE",
+              "description": "系统设备上线与离线通知",
+              "dataFormat": "[{\"code\":\"ecode\",\"name\":\"设备编码\",\"type\":\"string\",\"describe\":\"xxx\"},{\"code\":\"areaPath\",\"name\":\"设备路径\",\"type\":\"string\",\"describe\":\"{工厂/车间/产线/温度传感器}\"},{\"code\":\"level\",\"name\":\"告警级别\",\"type\":\"string\",\"describe\":\"{紧急/一般}\"},{\"code\":\"state\",\"name\":\"状态变更\",\"type\":\"string\",\"describe\":\"{离线/上线}\"},{\"code\":\"time\",\"name\":\"时间\",\"type\":\"time\",\"describe\":\"{YYYY-MM-DD HH:mm}\"},{\"code\":\"relateDatas\",\"name\":\"相关数据\",\"type\":\"json\",\"describe\":\"电压/电流等关键指标\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-10-29 10:02:26",
+              "updateBy": "admin",
+              "updateTime": "2025-10-30 10:01:06",
+              "dataFormatJson": [
+                {
+                  "code": "ecode",
+                  "name": "设备编码",
+                  "describe": "xxx",
+                  "type": "string"
+                },
+                {
+                  "code": "areaPath",
+                  "name": "设备路径",
+                  "describe": "{工厂/车间/产线/温度传感器}",
+                  "type": "string"
+                },
+                {
+                  "code": "level",
+                  "name": "告警级别",
+                  "describe": "{紧急/一般}",
+                  "type": "string"
+                },
+                {
+                  "code": "state",
+                  "name": "状态变更",
+                  "describe": "{离线/上线}",
+                  "type": "string"
+                },
+                {
+                  "code": "time",
+                  "name": "时间",
+                  "describe": "{YYYY-MM-DD HH:mm}",
+                  "type": "time"
+                },
+                {
+                  "code": "relateDatas",
+                  "name": "相关数据",
+                  "describe": "电压/电流等关键指标",
+                  "type": "json"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1950015492004597761",
+              "name": "变量系统模块",
+              "type": "cron",
+              "cron": "* * * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-VARIABLE-SYSTEM",
+              "description": "",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 218,
+              "status": "0",
+              "createBy": "admin",
+              "createTime": "2025-07-29 10:08:17",
+              "updateBy": "WeiHuaMin",
+              "updateTime": "2025-07-31 16:37:57",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1920727939414433794",
+              "name": "定时消息触发",
+              "type": "cron",
+              "cron": "0 0/2 * * * ? *",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-msg-test",
+              "description": "",
+              "dataFormat": "[{\"code\":\"time\",\"name\":\"时间表达式\",\"describe\":\"这是一个Cron表达式\",\"type\":\"string\"}]",
+              "jobId": 190,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-05-09 14:30:01",
+              "updateBy": "admin",
+              "updateTime": "2025-07-09 16:08:54",
+              "dataFormatJson": [
+                {
+                  "code": "time",
+                  "name": "时间表达式",
+                  "describe": "这是一个Cron表达式",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1920741883994644482",
+              "name": "系统设备告警事件",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"eid\":\"\",\"condition\":\"\",\"field\":\"\",\"text\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-THING-ALARM",
+              "description": "",
+              "dataFormat": "[{\"code\":\"eid\",\"name\":\"设备ID\",\"describe\":\"设备ID\",\"type\":\"string\"},{\"code\":\"entId\",\"name\":\"entId\",\"describe\":\"entId\",\"type\":\"string\"},{\"code\":\"alarmid\",\"name\":\"事件标识\",\"describe\":\"事件标识\",\"type\":\"string\"},{\"code\":\"name\",\"name\":\"事件名称\",\"describe\":\"事件名称\",\"type\":\"string\"},{\"code\":\"currentValue\",\"name\":\"当前值\",\"describe\":\"当前值\",\"type\":\"string\"},{\"code\":\"type\",\"name\":\"告警类型\",\"describe\":\"make:产生,clear: 消除\",\"type\":\"string\"},{\"code\":\"areaPath\",\"name\":\"分区路径\",\"describe\":\"分区路径\",\"type\":\"string\"},{\"code\":\"timestamp\",\"name\":\"告警产生时间\",\"describe\":\"告警产生时间\",\"type\":\"string\"},{\"code\":\"ASN\",\"name\":\"告警标识\",\"describe\":\"告警标识\",\"type\":\"string\"},{\"code\":\"name\",\"name\":\"事件名称\",\"describe\":\"事件名称\",\"type\":\"string\"},{\"code\":\"relateDatas\",\"name\":\"告警产生属性\",\"describe\":\"告警产生属性\",\"type\":\"string\"},{\"code\":\"esn\",\"name\":\"设备接入号\",\"describe\":\"设备接入号\",\"type\":\"string\"},{\"code\":\"emodelid\",\"name\":\"模型id\",\"describe\":\"模型id\",\"type\":\"string\"},{\"code\":\"areaId\",\"name\":\"分区id\",\"describe\":\"分区id\",\"type\":\"string\"},{\"code\":\"ecode\",\"name\":\"设备编码\",\"describe\":\"设备编码\",\"type\":\"string\"},{\"code\":\"ename\",\"name\":\"设备名称\",\"describe\":\"设备名称\",\"type\":\"string\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-05-09 15:25:25",
+              "updateBy": "admin",
+              "updateTime": "2025-05-21 20:27:02",
+              "dataFormatJson": [
+                {
+                  "code": "eid",
+                  "name": "设备ID",
+                  "describe": "设备ID",
+                  "type": "string"
+                },
+                {
+                  "code": "entId",
+                  "name": "entId",
+                  "describe": "entId",
+                  "type": "string"
+                },
+                {
+                  "code": "alarmid",
+                  "name": "事件标识",
+                  "describe": "事件标识",
+                  "type": "string"
+                },
+                {
+                  "code": "name",
+                  "name": "事件名称",
+                  "describe": "事件名称",
+                  "type": "string"
+                },
+                {
+                  "code": "currentValue",
+                  "name": "当前值",
+                  "describe": "当前值",
+                  "type": "string"
+                },
+                {
+                  "code": "type",
+                  "name": "告警类型",
+                  "describe": "make:产生,clear: 消除",
+                  "type": "string"
+                },
+                {
+                  "code": "areaPath",
+                  "name": "分区路径",
+                  "describe": "分区路径",
+                  "type": "string"
+                },
+                {
+                  "code": "timestamp",
+                  "name": "告警产生时间",
+                  "describe": "告警产生时间",
+                  "type": "string"
+                },
+                {
+                  "code": "ASN",
+                  "name": "告警标识",
+                  "describe": "告警标识",
+                  "type": "string"
+                },
+                {
+                  "code": "name",
+                  "name": "事件名称",
+                  "describe": "事件名称",
+                  "type": "string"
+                },
+                {
+                  "code": "relateDatas",
+                  "name": "告警产生属性",
+                  "describe": "告警产生属性",
+                  "type": "string"
+                },
+                {
+                  "code": "esn",
+                  "name": "设备接入号",
+                  "describe": "设备接入号",
+                  "type": "string"
+                },
+                {
+                  "code": "emodelid",
+                  "name": "模型id",
+                  "describe": "模型id",
+                  "type": "string"
+                },
+                {
+                  "code": "areaId",
+                  "name": "分区id",
+                  "describe": "分区id",
+                  "type": "string"
+                },
+                {
+                  "code": "ecode",
+                  "name": "设备编码",
+                  "describe": "设备编码",
+                  "type": "string"
+                },
+                {
+                  "code": "ename",
+                  "name": "设备名称",
+                  "describe": "设备名称",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "2039624644457672706",
+              "name": "测试事件中心-44cd04dd",
+              "type": "cron",
+              "cron": null,
+              "cond": null,
+              "topic": "TEST-TOPIC-1775119454-116a93bb",
+              "description": null,
+              "dataFormat": null,
+              "jobId": 0,
+              "status": "0",
+              "createBy": "admin",
+              "createTime": "2026-04-02 16:43:04",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": null,
+              "condJson": null
+            },
+            {
+              "id": "2019332878871236610",
+              "name": "主生产计划",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"field\":\"\",\"eid\":\"\",\"text\":\"\",\"condition\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-msg-testhhh",
+              "description": "",
+              "dataFormat": "[{\"code\":\"1\",\"name\":\"字段1\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"12\",\"name\":\"字段2\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"3\",\"name\":\"字段3\",\"type\":\"string\",\"describe\":\"\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "WeiHuaMin",
+              "createTime": "2026-02-05 16:50:50",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": [
+                {
+                  "code": "1",
+                  "name": "字段1",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "12",
+                  "name": "字段2",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "3",
+                  "name": "字段3",
+                  "describe": "",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1980145102204002306",
+              "name": "调用外部异常事件提醒",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"field\":\"\",\"eid\":\"\",\"text\":\"\",\"condition\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-EXCEPTION-EVENT",
+              "description": "",
+              "dataFormat": "[{\"code\":\"server\",\"name\":\"服务名称\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"type\",\"name\":\"类型\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"code\",\"name\":\"编码\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"msg\",\"name\":\"信息\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"desc\",\"name\":\"描述\",\"type\":\"string\",\"describe\":\"\"},{\"code\":\"time\",\"name\":\"时间\",\"type\":\"string\",\"describe\":\"\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-10-20 13:32:36",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": [
+                {
+                  "code": "server",
+                  "name": "服务名称",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "type",
+                  "name": "类型",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "code",
+                  "name": "编码",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "msg",
+                  "name": "信息",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "desc",
+                  "name": "描述",
+                  "describe": "",
+                  "type": "string"
+                },
+                {
+                  "code": "time",
+                  "name": "时间",
+                  "describe": "",
+                  "type": "string"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            },
+            {
+              "id": "1971039547822645249",
+              "name": "系统设备消息事件",
+              "type": "system",
+              "cron": "",
+              "cond": "[{\"field\":\"\",\"eid\":\"\",\"text\":\"\",\"condition\":\"\",\"value\":\"\",\"relation\":\"and\"}]",
+              "topic": "TEST-MASTER-IOT-SYSTEM-THING-MESSAGE",
+              "description": "系统设备消息事件",
+              "dataFormat": "[{\"code\":\"eid\",\"name\":\"设备ID\",\"type\":\"string\",\"describe\":\"设备ID\"},{\"code\":\"entId\",\"name\":\"entId\",\"type\":\"string\",\"describe\":\"entId\"},{\"code\":\"msgid\",\"name\":\"消息标识\",\"type\":\"string\",\"describe\":\"消息标识\"},{\"code\":\"name\",\"name\":\"消息名称\",\"type\":\"string\",\"describe\":\"消息名称\"},{\"code\":\"type\",\"name\":\"消息类型\",\"type\":\"string\",\"describe\":\"make:产生,clear: 消除\"},{\"code\":\"relateDatas\",\"name\":\"关联属性信息\",\"type\":\"json\",\"describe\":\"关联属性信息\"}]",
+              "jobId": 0,
+              "status": "1",
+              "createBy": "admin",
+              "createTime": "2025-09-25 10:30:23",
+              "updateBy": null,
+              "updateTime": null,
+              "dataFormatJson": [
+                {
+                  "code": "eid",
+                  "name": "设备ID",
+                  "describe": "设备ID",
+                  "type": "string"
+                },
+                {
+                  "code": "entId",
+                  "name": "entId",
+                  "describe": "entId",
+                  "type": "string"
+                },
+                {
+                  "code": "msgid",
+                  "name": "消息标识",
+                  "describe": "消息标识",
+                  "type": "string"
+                },
+                {
+                  "code": "name",
+                  "name": "消息名称",
+                  "describe": "消息名称",
+                  "type": "string"
+                },
+                {
+                  "code": "type",
+                  "name": "消息类型",
+                  "describe": "make:产生,clear: 消除",
+                  "type": "string"
+                },
+                {
+                  "code": "relateDatas",
+                  "name": "关联属性信息",
+                  "describe": "关联属性信息",
+                  "type": "json"
+                }
+              ],
+              "condJson": [
+                {
+                  "eid": "",
+                  "condition": "",
+                  "field": "",
+                  "text": "",
+                  "value": "",
+                  "relation": "and"
+                }
+              ]
+            }
+          ],
+          "total": 0,
+          "size": -1,
+          "current": 1,
+          "orders": [],
+          "optimizeCountSql": true,
+          "searchCount": true,
+          "countId": null,
+          "maxLimit": null,
+          "pages": 0
+        },
+        "timestamp": 1775526821439,
+        "requestId": "8a498c409d65a298019d65a53e3f001b"
+      },
+      "error_message": null,
+      "stack_trace": null
+    },
+    {
+      "name": "事件中心动作表-发布事件消息到指定队列类型",
+      "endpoint_path": "/ESBREST/faas/coode/sendToEventMessage",
+      "method": "POST",
+      "api_type": "faas",
+      "status": "failed",
+      "attempt": 15,
+      "elapsed_ms": 10025,
+      "payload": {
+        "topic": "TEST-TOPIC-1775526894-31814092",
+        "type": "kafka",
+        "msgs": {
+          "name": "test",
+          "value": 123
+        }
+      },
+      "response": {
+        "success": false,
+        "code": 408,
+        "message": "读取响应超时"
+      },
+      "error_message": "faas 类型响应缺少 errorCode 字段，实际: ['success', 'code', 'message']",
+      "stack_trace": null
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+================================================================================
+极联平台接口管理集成 API 兼容性测试报告
+================================================================================
+测试时间  : 2026-04-07T09:59:34.795866 ~ 2026-04-07T09:59:38.200992
+总用例数  : 4
+通过      : 4 (100.0%)
+失败      : 0 (0.0%)
+跳过      : 0
+总耗时    : 3270ms
+================================================================================
+
+[[PASS]] PASSED  | 获取API管理应用接入列表
+    接口  : POST /ESBREST/edge/app/getAppList (edge)
+    请求  : {"page": 1, "size": 10, "name": ""}
+    尝试  : 1 次
+    耗时  : 52ms
+    响应  :
+    {
+      "errorCode": 0,
+      "errorMsg": "执行成功！",
+      "return": {
+        "list": [
+          {
+            "id": 128,
+            "appId": "3710e1d4-7a76-40d0-84a5-81224d3fe892",
+            "page": 0,
+            "size": 0,
+            "code": "faasbusi",
+            "name": "业务云函数管理",
+            "state": 1,
+            "connect": "EHZAPPV1.0.0.1",
+            "describe": "",
+            "qty": 13,
+            "baseParam": [
+              {
+                "id": "url",
+                "name": "服务地址",
+                "type": "3",
+                "value": "127.0.0.1:802/ehz
+        ... (已截断)
+
+[[PASS]] PASSED  | 根据标识符查询接口服务列表
+    接口  : POST /ESBREST/edge/app/getAppInterfaceList (edge)
+    请求  : {"page": 1, "appId": "3710e1d4-7a76-40d0-84a5-81224d3fe892", "size": 10, "name": ""}
+    尝试  : 1 次
+    耗时  : 972ms
+    响应  :
+    {
+      "errorCode": 0,
+      "errorMsg": "执行成功！",
+      "return": {
+        "list": [
+          {
+            "id": "a80c558e-dff3-4976-aad4-37d0384abd11",
+            "appId": "3710e1d4-7a76-40d0-84a5-81224d3fe892",
+            "name": "insertProductionPlan",
+            "addr": "insertProductionPlan",
+            "state": 1,
+            "describe": "",
+            "method": "POST",
+            "inParam": [
+              {
+                "code": "order_id",
+                "name": "订单编号",
+                "type": "string",
+                "required": 1,
+              
+        ... (已截断)
+
+[[PASS]] PASSED  | 获取单个接口文档
+    接口  : POST /ESBREST/faas/code/get_interface_doc (faas)
+    请求  : {"addr": "insertProductionPlan", "appName": "业务云函数管理"}
+    尝试  : 1 次
+    耗时  : 55ms
+    响应  :
+    {
+      "errorCode": 0,
+      "errorMsg": "操作成功",
+      "return": {
+        "content": "## insertProductionPlan\n\n### 接口路径\nPOST [http://gateway:80/ESBREST/edge/app/insertProductionPlan]\n\n### 接口描述\ninsertProductionPlan\n\n### 请求参数\n#### 请求示例\n```json\n{\n  \"apikey\": \"\",\n  \"request\": {\n      \"order_id\": \"\",\n      \"product_name\": \"\",\n      \"product_code\": \"\"\n  }\n}\n```\n\n#### 字段说明\n| 字段标识 | 字段名 | 类型 | 必填 | 事例 | 描述 |\n| --- | --- | --- | --- | --- | --- |\n| order_id | 订单编号 | 字符串 | 是 | 
+        ... (已截断)
+
+[[PASS]] PASSED  | 调用API管理接口服务
+    接口  : POST /ESBREST/edge/app/debugAppInterface (edge)
+    请求  : {"appId": "3710e1d4-7a76-40d0-84a5-81224d3fe892", "id": "a80c558e-dff3-4976-aad4-37d0384abd11", "inParam": [{"code": "order_id", "type": "string", "defaultVal": ""}], "callWay": "debug"}
+    尝试  : 1 次
+    耗时  : 2191ms
+    响应  :
+    {
+      "errorCode": 0,
+      "errorMsg": "执行成功！",
+      "return": {
+        "state": 0,
+        "content": "{\"return\":\"False\",\"_ERR_CODE\":-1,\"_ERR_MSG\":\"\"}",
+        "date": "1775527102617"
+      }
+    }
+================================================================================

@@ -1,0 +1,200 @@
+================================================================================
+极联平台数据集成 API 兼容性测试报告
+================================================================================
+测试时间  : 2026-04-01T18:05:17.449774 ~ 2026-04-01T18:05:39.007658
+总用例数  : 7
+通过      : 7 (100.0%)
+失败      : 0 (0.0%)
+跳过      : 0
+总耗时    : 8256ms
+================================================================================
+
+[[PASS]] PASSED  | 数据存储管理-列表查询
+    接口  : GET /ESBREST/iiot/dataStorage/list (iiot)
+    请求  : {"isPage": 1, "pageNo": 1, "pageSize": 10}
+    尝试  : 1 次
+    耗时  : 1113ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": {
+        "records": [
+          {
+            "id": "2029850122467487745",
+            "createBy": "admin",
+            "createTime": "2026-03-06 17:22:37",
+            "updateBy": null,
+            "updateTime": null,
+            "entId": "hztest",
+            "tableName": "业务流转信息看板",
+            "tableId": "HZ_TESTaa",
+            "tableType": "0",
+            "type": "mysql",
+            "tags": "",
+            "cfg": "{\"charset\":\"utf8mb4\",\"database\":\"ehzMES\",\"password\":\"
+        ... (已截断)
+
+[[PASS]] PASSED  | 数据存储管理-获取表结构数据
+    接口  : GET /ESBREST/iiot/dataStorage/getTableStructure (iiot)
+    请求  : {"table_id": "HZ_TESTaa"}
+    尝试  : 2 次
+    耗时  : 1118ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": {
+        "is_permanent_storage": null,
+        "create_time": "2026-03-06 17:22:37",
+        "cfg": "{\"charset\":\"utf8mb4\",\"database\":\"ehzMES\",\"password\":\"vxWbUk5n3Sz7YFWgJRqTMA==\",\"port\":3306,\"host\":\"mysql\",\"type\":\"mysql\",\"username\":\"root\"}",
+        "data_save_days": null,
+        "description": null,
+        "cfg_id": 1978032388497531000,
+        "table_id": "HZ_TESTaa",
+        "type": "mysql",
+        "table_name": "业务流转信息看板",
+        "tags
+        ... (已截断)
+
+[[PASS]] PASSED  | 系统-标签表-获取标签树
+    接口  : GET /ESBREST/iiot/SystemTag/getTagsTree (iiot)
+    请求  : {"type": "storage"}
+    尝试  : 1 次
+    耗时  : 1009ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": [
+        {
+          "children": [
+            {
+              "id": "1",
+              "title": "数据采集",
+              "type": 1,
+              "key": "8a49804a9d454a98019d488063c11eac"
+            },
+            {
+              "id": "2",
+              "title": "数据分析",
+              "type": 1,
+              "key": "8a49804a9d454a98019d488063c11ead"
+            },
+            {
+              "id": "3",
+              "title": "应用开发",
+              "type": 1,
+              "key": "8a49804a9d454a98019d488063
+        ... (已截断)
+
+[[PASS]] PASSED  | 获取关联表数据
+    接口  : GET /ESBREST/iiot/dataStorage/getReferTableData (iiot)
+    请求  : {"pageNo": 1, "pageSize": 10, "table_id": "HZ_TESTaa", "value": "值"}
+    尝试  : 1 次
+    耗时  : 1403ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": {
+        "total": 0,
+        "current": 1,
+        "pages": 0,
+        "size": 10,
+        "records": []
+      },
+      "timestamp": 1775037868315,
+      "requestId": "8a49804a9d454a98019d4880691b1edc"
+    }
+
+[[PASS]] PASSED  | 数据存储管理-获取表字段信息
+    接口  : GET /ESBREST/iiot/dataStorage/tableFieldList (iiot)
+    请求  : {"isPage": 1, "pageNo": 1, "pageSize": 10, "table_id": "HZ_TESTaa"}
+    尝试  : 1 次
+    耗时  : 1314ms
+    响应  :
+    {
+      "success": true,
+      "message": "",
+      "code": 200,
+      "result": {
+        "records": [
+          {
+            "id": "2029850122790449153",
+            "createBy": "admin",
+            "createTime": "2026-03-06 17:22:37",
+            "updateBy": null,
+            "updateTime": null,
+            "field": "cca",
+            "type": "string",
+            "name": "cca",
+            "description": "cca"
+          },
+          {
+            "id": "2029850122811420674",
+            "createBy": "admin",
+            "createTime": "2026-03-06 17:22:37",
+            "upda
+        ... (已截断)
+
+[[PASS]] PASSED  | 数据存储管理-查询所有表关系列表
+    接口  : POST /ESBREST/faas/code/getTableRelationshipList (faas)
+    请求  : {"page": 1, "pageSize": 10}
+    尝试  : 1 次
+    耗时  : 1193ms
+    响应  :
+    {
+      "errorCode": 0,
+      "errorMsg": "操作成功",
+      "return": {
+        "total": 2,
+        "page": 1,
+        "pageSize": 10,
+        "list": [
+          {
+            "id": 19,
+            "main_table": "TEST_sys_role",
+            "foreign_table": "TEST_sys_role_permission",
+            "relationship_type": "one-to-many",
+            "relationship_description": "",
+            "created_by": "admin",
+            "created_time": "2026-03-10 20:10:25",
+            "updated_by": "admin",
+            "updated_time": "2026-03-10 20:10:25",
+            "field_count"
+        ... (已截断)
+
+[[PASS]] PASSED  | 获取关系详情接口
+    接口  : POST /ESBREST/faas/code/getTableRelationshipDetail (faas)
+    请求  : {"id": 19}
+    尝试  : 1 次
+    耗时  : 1106ms
+    响应  :
+    {
+      "errorCode": 0,
+      "errorMsg": "操作成功",
+      "return": {
+        "id": 19,
+        "mainTable": "TEST_sys_role",
+        "foreignTable": "TEST_sys_role_permission",
+        "relationshipType": "one-to-many",
+        "relationshipDescription": "",
+        "fieldMappings": [
+          {
+            "id": 61,
+            "main_field": "role_code",
+            "foreign_field": "role_id",
+            "mapping_order": 1
+          }
+        ],
+        "createdBy": "admin",
+        "createdTime": "2026-03-10 20:10:25",
+        "updatedBy": "admin",
+        "updatedTime":
+        ... (已截断)
+================================================================================
