@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""manage-skills CLI — browse/install/uninstall skills from private GitLab repo"""
+"""skills-manage CLI — browse/install/uninstall skills from private GitLab repo"""
 import json
 import os
 import shutil
@@ -61,7 +61,7 @@ def cmd_browse():
     print()
     print("  Install:")
     for s in skills:
-        print(f"    manage-skills install {s['name']}")
+        print(f"    skills-manage install {s['name']}")
     print()
 
 
@@ -96,12 +96,12 @@ def cmd_uninstall(name):
 
 def print_help():
     print("Usage:")
-    print("  manage-skills browse")
-    print("  manage-skills install <name>")
-    print("  manage-skills uninstall <name>")
+    print("  skills-manage browse")
+    print("  skills-manage install <name>")
+    print("  skills-manage uninstall <name>")
     print()
     print("Examples:")
-    print("  manage-skills install hello-hermes")
+    print("  skills-manage install hello-hermes")
 
 
 if __name__ == "__main__":
@@ -115,12 +115,12 @@ if __name__ == "__main__":
         cmd_browse()
     elif cmd == "install":
         if len(sys.argv) < 3:
-            print("Usage: manage-skills install <name>")
+            print("Usage: skills-manage install <name>")
             sys.exit(1)
         cmd_install(sys.argv[2])
     elif cmd == "uninstall":
         if len(sys.argv) < 3:
-            print("Usage: manage-skills uninstall <name>")
+            print("Usage: skills-manage uninstall <name>")
             sys.exit(1)
         cmd_uninstall(sys.argv[2])
     else:
