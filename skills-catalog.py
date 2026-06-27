@@ -10,6 +10,7 @@ OUTPUT = "skills-catalog.json"
 
 
 def parse_frontmatter(content: str) -> dict:
+    """Extract YAML frontmatter fields (simple parser, no PyYAML dependency)."""
     result = {}
     m = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
     if not m:
@@ -32,21 +33,28 @@ def main():
         path = os.path.relpath(os.path.join(root, "SKILL.md"), SKILLS_DIR)
         skill_dir = os.path.dirname(path)
         name = os.path.basename(skill_dir)
+
         with open(os.path.join(root, "SKILL.md"), encoding="utf-8") as f:
             content = f.read()
+
         fm = parse_frontmatter(content)
+        description = fm.get("description", "")
+
         skills.append({
             "name": name,
             "path": skill_dir,
-            "description": fm.get("description", ""),
+            "description": description,
         })
+
     catalog = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "skills": skills,
     }
+
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(catalog, f, ensure_ascii=False, indent=2)
-    print(f"Catalog: {len(skills)} skills -> {OUTPUT}")
+
+    print(f"Catalog generated: {len(skills)} skills -> {OUTPUT}")
 
 
 if __name__ == "__main__":
